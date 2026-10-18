@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南投國中 115學年度畢業旅行 行動簡報手冊（去個資版）</title>
+<meta name="description" content="南投縣立南投國民中學 115學年度畢業旅行 簡報式行動手冊，提供投影片全螢幕簡報模式與捲動閱讀模式，支援快速查詢行程、去個資房號車次、景點與生活須知。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+<style>
+  /* 投中畢旅專屬風格微調 */
+  :root {
+    --cf-accent: #38bdf8;
+    --cf-accent-dim: #0284c7;
+    --cf-bg-glow: #0c4a6e;
+    --tag-pill: #0284c7;
+  }
+  .tag-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(56, 189, 248, 0.18);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+  }
+  .table-deck {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 6px;
+  }
+  .table-deck th {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--cf-text);
+    padding: 6px 8px;
+    border: 1px solid var(--cf-rule);
+    text-align: left;
+    font-weight: 700;
+  }
+  .table-deck td {
+    padding: 5px 8px;
+    border: 1px solid var(--cf-rule);
+    color: var(--cf-text-dim);
+  }
+  .table-deck tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .table-deck strong {
+    color: #ffffff;
+  }
+  .grid-deck-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .grid-deck-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .card-slide {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--cf-rule);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .card-slide h4 {
+    font-size: 15px;
+    color: var(--cf-accent);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .img-slide {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--cf-rule);
+  }
+</style>
+</head>
+<body class="deck" data-mode="present">
+<header class="deck-bar">
+  <a class="deck-back" href="app.html">📱 行動手冊速查</a>
+  <a class="deck-back" href="投中畢旅手冊-去個資.md" download="投中畢旅手冊-去個資.md">⬇ 下載手冊文檔</a>
+  <span class="deck-id">南投國中 115 畢旅</span>
+  <span class="deck-name">畢業旅行行動簡報手冊（去個資版）</span>
+  <div class="deck-tools">
+    <button class="deck-btn" id="toc-btn" type="button">目錄總覽</button>
+    <button class="deck-btn is-on" id="mode-btn" type="button">閱讀模式</button>
+    <button class="deck-btn" id="fs-btn" type="button">全螢幕</button>
+    <span class="deck-count" id="deck-count"></span>
+  </div>
+</header>
+<main class="deck-stage" id="deck-stage">
+
+  <!-- Slide 01: 封面 -->
+  <section class="slide slide-cover" id="slide-cover">
+    <p class="s-eyebrow">南投縣立南投國民中學　·　115 學年度　·　三天二夜</p>
+    <h1 class="s-title-xl" style="font-size: 48px; line-height: 1.2;">畢業旅行 行前說明簡報<br><span style="font-size:32px; color:var(--cf-accent);">國境之南・知性采風與冒險狂歡（去個資版）</span></h1>
+    <p class="s-sub" style="font-size: 19px; margin-top: 14px;">
+      活動時間：115.10.21 (三) ～ 115.10.23 (五) ｜ 集合時間：10/21 07:30 學校中庭集合<br>
+      隨團指導：劉O彥 校長、董O遠 學務主任、姚O勤 訓育組長 暨 九年級全體導師
+    </p>
+  </section>
+
+  <!-- Slide 02: 總覽 -->
+  <section class="slide" id="slide-overview">
+    <p class="s-eyebrow">AGENDA ＆ MAP</p>
+    <h2 class="s-title">畢旅三天行程地圖與住宿資訊</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <ul class="s-list">
+            <li><b>Day 1（10/21 三）</b>：學校集合 ➔ 田寮月世界 ➔ 國立海洋生物博物館 ➔ 貓鼻頭風景區 ➔ 墾丁福華渡假大飯店 ➔ 墾丁大街夜巡</li>
+            <li><b>Day 2（10/22 四）</b>：晨喚早餐 ➔ 飯店沙灘趣味競賽 (淨灘踏浪) ➔ 前往高雄 ➔ 義大遊樂世界 (特洛伊城) ➔ 義大世界購物廣場 ＆ 摩天輪 ➔ 高雄義大天悅飯店</li>
+            <li><b>Day 3（10/23 五）</b>：旗津海岸公園 ＆ 星空隧道 ＆ 旗後砲台 ➔ 港都午餐 ➔ 奇美博物館 ➔ 921地震公園暨會展中心 ➔ 快樂賦歸南投國中</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-slide" style="margin-bottom:10px;">
+            <h4>🏨 10/21 (三) 墾丁福華渡假大飯店</h4>
+            <div style="font-size:13px; color:var(--cf-text-dim);">
+              電話：(08) 886-2324 ｜ 屏東縣恆春鎮墾丁路 2 號<br>
+              特色：座落國境之南、緊鄰小灣沙灘與墾丁大街。
+            </div>
+          </div>
+          <div class="card-slide">
+            <h4>🏨 10/22 (四) 高雄義大天悅飯店</h4>
+            <div style="font-size:13px; color:var(--cf-text-dim);">
+              電話：(07) 656-8000 ｜ 高雄市大樹區義大八街 100 號<br>
+              特色：義大世界核心，鄰近購物廣場與海拔215公尺摩天輪。
+            </div>
+          </div>
+          <div class="tip warn" style="margin-top:10px;">
+            <span class="tip-tag">環保提醒</span>
+            <div class="tip-body">依法兩家飯店不提供一次性盥洗備品，<b>請全體師生自備牙刷、牙膏、梳子</b>。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 03: Day 1 -->
+  <section class="slide" id="slide-day1">
+    <p class="s-eyebrow">DAY 1 行程細節 · 115/10/21 (星期三)</p>
+    <h2 class="s-title">南下探索・惡地奇景與國境之南海生館</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <table class="table-deck">
+            <thead><tr><th>時間節點</th><th>行程與活動內容</th></tr></thead>
+            <tbody>
+              <tr><td>07:30</td><td><strong>學校中庭集合出發</strong>（各班班長清點回報）</td></tr>
+              <tr><td>08:00~10:00</td><td>國道風光、車上行車安全宣導與育樂</td></tr>
+              <tr><td>10:00~11:30</td><td><strong>田寮月世界</strong>：欣賞泥岩惡地特殊地質、攬月樓</td></tr>
+              <tr><td>11:45~12:45</td><td>享用合菜美味午餐（依分配桌次整齊就座）</td></tr>
+              <tr><td>13:30~16:00</td><td><strong>國立海洋生物博物館</strong>：台灣水域、珊瑚王國、世界水域</td></tr>
+              <tr><td>16:20~17:30</td><td><strong>貓鼻頭風景區</strong>：台灣海峽與巴士海峽交界裙礁</td></tr>
+              <tr><td>18:00~19:00</td><td>美味晚餐 ➔ 辦理入住<strong>墾丁福華渡假大飯店</strong></td></tr>
+              <tr><td>19:20~21:00</td><td>導師領隊帶領夜探墾丁大街 ➔ 21:30 晚點名查房就寢</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/nmmba_cover_1.jpg" alt="海生館">
+          <div class="tip" style="margin-top:10px;">
+            <span class="tip-tag">Day 1 叮嚀</span>
+            <div class="tip-body">容易暈車的同學請於<b>開車前 30 分鐘</b>服用暈車藥；夜遊墾丁大街務必集體行動，切勿落單！</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 04: Day 2 -->
+  <section class="slide" id="slide-day2">
+    <p class="s-eyebrow">DAY 2 行程細節 · 115/10/22 (星期四)</p>
+    <h2 class="s-title">沙灘踏浪・義大冒險與璀璨摩天輪</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <table class="table-deck">
+            <thead><tr><th>時間節點</th><th>行程與活動內容</th></tr></thead>
+            <tbody>
+              <tr><td>07:00~08:00</td><td>晨喚・墾丁福華飯店內享用豐盛自助早餐</td></tr>
+              <tr><td>08:20~09:50</td><td><strong>飯店沙灘趣味競賽</strong>（分組環保淨灘、海濱踏浪）</td></tr>
+              <tr><td>10:10~12:00</td><td>專車前往高雄大樹區義大世界</td></tr>
+              <tr><td>12:00~17:30</td><td><strong>義大遊樂世界</strong>：特洛伊城木馬、室內暗室雲霄飛車、飛越台灣（午餐發放餐券 100 元）</td></tr>
+              <tr><td>17:30~20:00</td><td><strong>義大世界購物廣場 ＆ 搭乘高空摩天輪</strong>（晚餐美食街自理）</td></tr>
+              <tr><td>20:30</td><td>夜宿<strong>高雄義大天悅飯店</strong>，分配房卡進房</td></tr>
+              <tr><td>21:30</td><td>晚點名查房，安靜盥洗休息就寢</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/eda_ferris_wheel.jpg" alt="義大摩天輪">
+          <div class="tip" style="margin-top:10px;">
+            <span class="tip-tag">Day 2 叮嚀</span>
+            <div class="tip-body">沙灘活動嚴禁擅自深水游泳；遊樂園請量力而為，心血管疾病或不適者勿搭乘刺激設施。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 05: Day 3 -->
+  <section class="slide" id="slide-day3">
+    <p class="s-eyebrow">DAY 3 行程細節 · 115/10/23 (星期五)</p>
+    <h2 class="s-title">港都采風・奇美文藝殿堂・快樂賦歸</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <table class="table-deck">
+            <thead><tr><th>時間節點</th><th>行程與活動內容</th></tr></thead>
+            <tbody>
+              <tr><td>07:00~08:00</td><td>晨喚・天悅飯店自助早餐 ➔ 整理行李退房出發</td></tr>
+              <tr><td>08:20~11:00</td><td><strong>旗津風景區采風巡禮</strong>：星空隧道、旗後砲台、天后宮、旗津老街</td></tr>
+              <tr><td>11:30~12:30</td><td>港都海味午餐（合菜）</td></tr>
+              <tr><td>13:30~16:00</td><td><strong>奇美博物館</strong>：西洋美學雕塑、動物自然史、名琴樂器與阿波羅噴泉廣場</td></tr>
+              <tr><td>16:30~17:30</td><td><strong>921地震公園暨南投國際會展中心</strong>：大合影紀念</td></tr>
+              <tr><td>17:30~18:00</td><td><strong>快樂賦歸！</strong>平安返抵南投國中，互道珍重回可愛的家！</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/chimei_3.jpg" alt="奇美博物館">
+          <div class="tip" style="margin-top:10px;">
+            <span class="tip-tag">Day 3 叮嚀</span>
+            <div class="tip-body">參訪奇美博物館請保持安靜輕語、愛護展品；下車返家前務必清點個人隨身行李與貴重物品！</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 06: 團務車次 -->
+  <section class="slide" id="slide-buses">
+    <p class="s-eyebrow">ORGANIZATION</p>
+    <h2 class="s-title">團務車次與隨車師長分配（去個資版）</h2>
+    <div class="s-body">
+      <table class="table-deck">
+        <thead>
+          <tr>
+            <th>車次</th><th>班級分配</th><th>男生</th><th>女生</th><th>合計</th><th>素食</th><th>隨車行政與導師名單</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1 車</strong></td><td>901 全部、902 男4 女7</td><td>15</td><td>15</td><td><strong>30</strong></td><td>0</td><td>董O遠 學務主任、吳O萱 導師、黃O英 導師</td></tr>
+          <tr><td><strong>2 車</strong></td><td>903 全部、902 男4 女4</td><td>15</td><td>16</td><td><strong>31</strong></td><td>0</td><td>陳O綸 導師</td></tr>
+          <tr><td><strong>3 車</strong></td><td>904 全部</td><td>10</td><td>9</td><td><strong>19</strong></td><td>1</td><td>蔡O秀 導師（素、眷屬同房）</td></tr>
+          <tr><td><strong>4 車 (丁車)</strong></td><td>905 全部</td><td>11</td><td>10</td><td><strong>21</strong></td><td>0</td><td>施O婷 導師</td></tr>
+          <tr><td><strong>5 車</strong></td><td>906 全部</td><td>13</td><td>11</td><td><strong>24</strong></td><td>0</td><td>石O洋 導師</td></tr>
+          <tr><td><strong>6 車</strong></td><td>907 全部、908 全部</td><td>17</td><td>14</td><td><strong>31</strong></td><td>0</td><td>孫O惠 導師、李O嘉 導師</td></tr>
+          <tr><td><strong>7 車</strong></td><td>909 全部</td><td>10</td><td>12</td><td><strong>22</strong></td><td>1</td><td>姚O勤 訓育組長、黃O姿 導師（素）</td></tr>
+          <tr style="background:rgba(56, 189, 248, 0.12);">
+            <td><strong>合計</strong></td><td><strong>全體九年級</strong></td><td><strong>91</strong></td><td><strong>87</strong></td><td><strong>178</strong></td><td><strong>2</strong></td><td><strong>隨團師長共 12 位（男5、女6、素3、眷1）</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Slide 07: 老師分房 -->
+  <section class="slide" id="slide-teachers">
+    <p class="s-eyebrow">CHAPERONES</p>
+    <h2 class="s-title">隨團師長雙晚分房對照表（去個資版）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <table class="table-deck">
+            <thead><tr><th>職稱</th><th>姓名</th><th>10/21 福華</th><th>10/22 天悅</th><th>車次</th></tr></thead>
+            <tbody>
+              <tr><td>校長</td><td>劉O彥</td><td>－</td><td><strong>746</strong></td><td>公務</td></tr>
+              <tr><td>學務主任</td><td>董O遠</td><td><strong>4056</strong></td><td><strong>747</strong></td><td>1 車</td></tr>
+              <tr><td>902 導師</td><td>黃O英</td><td><strong>4058</strong></td><td><strong>748</strong></td><td>1 車</td></tr>
+              <tr><td>908 導師</td><td>李O嘉</td><td><strong>4060</strong></td><td><strong>750</strong></td><td>6 車</td></tr>
+              <tr><td>訓育組長</td><td>姚O勤</td><td><strong>3058</strong></td><td><strong>740</strong></td><td>7 車</td></tr>
+              <tr><td>904 導師</td><td>蔡O秀</td><td><strong>3058</strong></td><td><strong>740</strong></td><td>3 車</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table class="table-deck">
+            <thead><tr><th>職稱</th><th>姓名</th><th>10/21 福華</th><th>10/22 天悅</th><th>車次</th></tr></thead>
+            <tbody>
+              <tr><td>907 導師</td><td>孫O惠</td><td><strong>3060</strong></td><td><strong>742</strong></td><td>6 車</td></tr>
+              <tr><td>909 導師</td><td>黃O姿</td><td><strong>3060</strong></td><td><strong>742</strong></td><td>7 車</td></tr>
+              <tr><td>906 導師</td><td>石O洋</td><td><strong>3062</strong></td><td><strong>752</strong></td><td>5 車</td></tr>
+              <tr><td>905 導師</td><td>施O婷</td><td><strong>3062</strong></td><td><strong>752</strong></td><td>4 車</td></tr>
+              <tr><td>901 導師</td><td>吳O萱</td><td><strong>3064</strong></td><td><strong>756</strong></td><td>1 車</td></tr>
+              <tr><td>903 導師</td><td>陳O綸</td><td><strong>3064</strong></td><td><strong>756</strong></td><td>2 車</td></tr>
+            </tbody>
+          </table>
+          <div class="tip" style="margin-top:8px;">
+            <div class="tip-body">校長於第二日（10/22）進駐義大天悅飯店 746 房關懷師生。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 08: 901 班名冊 -->
+  <section class="slide" id="slide-901">
+    <p class="s-eyebrow">CLASS 901 · 隨車 1 車</p>
+    <h2 class="s-title">901 班分房與桌次名冊（男 11、女 8，計 19 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2141</strong>：簡O翔(桌1)、簡O錤(桌2)、賴O育(桌1)、楊O翰(桌1)、鄒O陞(桌1)、廖O豪(桌1)<br>
+            • <strong>(男) 2142</strong>：吳O成(桌2)、林O紘(桌2)、陳O潾(桌2)、陳O宥(桌2)、黃O榤(桌1)<br>
+            • <strong>(女) 3082</strong>：林O汝(桌1)、賴O羽(桌1)、劉O妤(桌1)、鄧O云(桌1)<br>
+            • <strong>(女) 3084</strong>：田O羽(桌2)、朱O融(桌2)、陳O涵(桌2)、陳O妡(桌2)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 501</strong>：簡O翔、簡O錤、賴O育、鄒O陞<br>
+            • <strong>(男) 502</strong>：吳O成、林O紘、陳O潾、黃O榤<br>
+            • <strong>(男) 503</strong>：楊O翰、廖O豪、陳O宥<br>
+            • <strong>(女) 546</strong>：林O汝、賴O羽、劉O妤、鄧O云<br>
+            • <strong>(女) 547</strong>：田O羽、朱O融、陳O涵、陳O妡
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 09: 902 班名冊 -->
+  <section class="slide" id="slide-902">
+    <p class="s-eyebrow">CLASS 902 · 拆分 1 車 / 2 車</p>
+    <h2 class="s-title">902 班分房與桌次名冊（男 8、女 11，計 19 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2122</strong>：古O弘(桌3)、黃O翊(桌3)、楊O正(桌3)、楊O傑(桌3)<br>
+            • <strong>(男) 2123</strong>：吳O億(桌3)、王O群(桌3)、陳O祺(桌3)、楊O諺(桌3)<br>
+            • <strong>(女) 3031</strong>：吳O霏(桌4)、沈O語(桌4)、林O安(桌4)、張O瑄(桌4)<br>
+            • <strong>(女) 3033</strong>：陳O蒨(桌4)、陳O潔(桌4)、鄒O璇(桌4)、歐O臻(桌4)<br>
+            • <strong>(女) 3035</strong>：王O恩(桌3)、劉O圻(桌4)、蔡O喬(桌4)（+906班1人）
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 509</strong>：古O弘、楊O傑、吳O億、楊O諺<br>
+            • <strong>(男) 511</strong>：王O群、陳O祺、黃O翊、楊O正<br>
+            • <strong>(女) 548</strong>：吳O霏、沈O語、林O安、張O瑄<br>
+            • <strong>(女) 549</strong>：陳O蒨、陳O潔、鄒O璇、歐O臻<br>
+            • <strong>(女) 550</strong>：王O恩、劉O圻、蔡O喬（+906班1人）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 10: 903 班名冊 -->
+  <section class="slide" id="slide-903">
+    <p class="s-eyebrow">CLASS 903 · 隨車 2 車</p>
+    <h2 class="s-title">903 班分房與桌次名冊（男 11、女 12，計 23 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2137</strong>：施O佑(桌6)、陳O侑(桌6)、廖O鈞(桌6)（+905班3人）<br>
+            • <strong>(男) 2124</strong>：蔡O君(桌7)、張O煒(桌6)、陳O潣(桌6)、黃O鈞(桌7)<br>
+            • <strong>(男) 2125</strong>：簡O霖(桌5)、曾O智(桌5)、施O圻(桌5)、洪O彬(桌5)<br>
+            • <strong>(女) 3056</strong>：林O儒(桌5)、張O禎(桌5)、楊O頵(桌5)、蕭O瑩(桌5)<br>
+            • <strong>(女) 3068</strong>：朱O芯(桌6)、賴O如(桌6)、廖O霓(桌6)、彭O璇(桌6)<br>
+            • <strong>(女) 3070</strong>：林O玫(桌5)、簡O鎣(桌6)、程O玹(桌5)、葉O瑄(桌6)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 512</strong>：蔡O君、張O煒、陳O潣、黃O鈞<br>
+            • <strong>(男) 515</strong>：簡O霖、曾O智、施O圻、洪O彬<br>
+            • <strong>(男) 516</strong>：施O佑、陳O侑、廖O鈞（+904班1人）<br>
+            • <strong>(女) 540</strong>：林O儒、張O禎、楊O頵、蕭O瑩<br>
+            • <strong>(女) 542</strong>：朱O芯、賴O如、廖O霓、彭O璇<br>
+            • <strong>(女) 543</strong>：林O玫、簡O鎣、程O玹、葉O瑄
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: 904 班名冊 -->
+  <section class="slide" id="slide-904">
+    <p class="s-eyebrow">CLASS 904 · 隨車 3 車</p>
+    <h2 class="s-title">904 班分房與桌次名冊（男 10、女 9，計 19 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2135</strong>：王O億(桌8)、石O愷(桌8)、林O羽(桌7)、姚O城(素)、羅O鈞(桌8)、王O(桌8)<br>
+            • <strong>(男) 2126</strong>：許O崴(桌7)、蔡O緯(桌7)、鄧O康(桌8)、鍾O洧(桌7)<br>
+            • <strong>(女) 3072</strong>：王O茹(桌8)、翁O涵(桌8)、黃O芳(桌7)、胡O紜(桌7)<br>
+            • <strong>(女) 3074</strong>：林O妮(桌8)、蔡O霏(桌7)、謝O倢(桌7)、藍O媗(桌8)<br>
+            • <strong>(女) 3076</strong>：黎O蓉(桌8)（+907班3人）
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 516</strong>：姚O城(素)（+903班3人）<br>
+            • <strong>(男) 517</strong>：王O億、石O愷、羅O鈞、王O<br>
+            • <strong>(男) 518</strong>：許O崴、蔡O緯、鍾O洧、林O羽<br>
+            • <strong>(男) 519</strong>：鄧O康（+905班3人）<br>
+            • <strong>(女) 560</strong>：黎O蓉（+907班3人）<br>
+            • <strong>(女) 561</strong>：王O茹、翁O涵、黃O芳、胡O紜<br>
+            • <strong>(女) 562</strong>：林O妮、蔡O霏、謝O倢、藍O媗
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 12: 905 班名冊 -->
+  <section class="slide" id="slide-905">
+    <p class="s-eyebrow">CLASS 905 · 隨車 4 車</p>
+    <h2 class="s-title">905 班分房與桌次名冊（男 11、女 10，計 21 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2137</strong>：湯O綸(桌10)、蕭O均(桌10)、簡O鈞(桌10)（+903班3人）<br>
+            • <strong>(男) 2127</strong>：熊O捷(桌9)、林O穎(桌9)、林O弘(桌9)、羅O惟(桌10)<br>
+            • <strong>(男) 2128</strong>：陳O璋(桌9)、陳O佑(桌9)、楊O樺(桌10)、葉O修(桌10)<br>
+            • <strong>(女) 3041</strong>：林O婕(桌9)、林O慧(桌9)（+906班2人）<br>
+            • <strong>(女) 3043</strong>：廖O玉(桌10)、張O涵(桌10)、張O潼(桌10)、曾O瑜(桌10)<br>
+            • <strong>(女) 3045</strong>：谷O愛(桌9)、林O渝(桌9)、黃O蓉(桌9)、廖O涵(桌9)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 519</strong>：湯O綸、蕭O均、簡O鈞（+904班1人）<br>
+            • <strong>(男) 520</strong>：熊O捷、林O穎、林O弘、羅O惟<br>
+            • <strong>(男) 521</strong>：陳O璋、陳O佑、楊O樺、葉O修<br>
+            • <strong>(女) 553</strong>：林O婕、林O慧（+906班2人）<br>
+            • <strong>(女) 555</strong>：廖O玉、張O涵、張O潼、曾O瑜<br>
+            • <strong>(女) 556</strong>：谷O愛、林O渝、黃O蓉、廖O涵
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 13: 906 班名冊 -->
+  <section class="slide" id="slide-906">
+    <p class="s-eyebrow">CLASS 906 · 隨車 5 車</p>
+    <h2 class="s-title">906 班分房與桌次名冊（男 13、女 11，計 24 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2138</strong>：王O倫(桌18)、吳O彥(桌11)、張O昕(桌11)、張O璽(桌11)、黃O翰(桌11)、黃O程(桌18)<br>
+            • <strong>(男) 2139</strong>：黃O揚(桌11)、陳O聖(桌18)、邱O辰(桌18)（+907班3人）<br>
+            • <strong>(男) 2129</strong>：陳O廷(桌12)、蔡O哲(桌12)、蕭O堯(桌12)、鄒O丞(桌12)<br>
+            • <strong>(女) 3035</strong>：張O芸(桌11)（+902班3人）<br>
+            • <strong>(女) 3037</strong>：張O卉(桌11)、郭O瑄(桌11)、黃O誼(桌11)、黃O貽(桌11)<br>
+            • <strong>(女) 3039</strong>：簡O涵(桌12)、許O慈(桌12)、陳O樂(桌12)、王O文(桌12)<br>
+            • <strong>(女) 3041</strong>：簡O霓(桌12)、林O甄(桌12)（+905班2人）
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 522</strong>：陳O廷、蔡O哲、蕭O堯、鄒O丞<br>
+            • <strong>(男) 523</strong>：王O倫、黃O程、陳O聖、邱O辰<br>
+            • <strong>(男) 525</strong>：吳O彥、張O昕、張O璽、黃O翰<br>
+            • <strong>(男) 526</strong>：黃O揚（+907班3人）<br>
+            • <strong>(女) 550</strong>：張O芸（+902班3人）<br>
+            • <strong>(女) 551</strong>：張O卉、郭O瑄、黃O誼、黃O貽<br>
+            • <strong>(女) 552</strong>：簡O涵、許O慈、林O甄、王O文<br>
+            • <strong>(女) 553</strong>：簡O霓、陳O樂（+905班2人）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 14: 907 班名冊 -->
+  <section class="slide" id="slide-907">
+    <p class="s-eyebrow">CLASS 907 · 隨車 6 車</p>
+    <h2 class="s-title">907 班分房與桌次名冊（男 11、女 11，計 22 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2139</strong>：金O賢(桌14)、張O二(桌14)、廖O豐(桌14)（+906班3人）<br>
+            • <strong>(男) 2130</strong>：莊O瑄(桌13)、張O湋(桌13)、陳O劭(桌14)、王O豐(桌14)<br>
+            • <strong>(男) 2131</strong>：松O樂(桌14)、陳O陞(桌13)、蔡O璟(桌13)、謝O佑(桌13)<br>
+            • <strong>(女) 3076</strong>：楊O沛(桌13)、林O琪(桌13)、侯O晴(桌14)（+904班1人）<br>
+            • <strong>(女) 3078</strong>：林O妤(桌13)、胡O愛(桌13)、張O穎(桌13)、曾O婕(桌13)<br>
+            • <strong>(女) 3080</strong>：徐O禕(桌14)、許O萱(桌14)、劉O芹(桌14)、林O鈺(桌14)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 526</strong>：金O賢、張O二、廖O豐（+906班1人）<br>
+            • <strong>(男) 527</strong>：莊O瑄、張O湋、陳O劭、王O豐<br>
+            • <strong>(男) 529</strong>：松O樂、陳O陞、蔡O璟、謝O佑<br>
+            • <strong>(女) 557</strong>：林O妤、胡O愛、張O穎、曾O婕<br>
+            • <strong>(女) 559</strong>：徐O禕、許O萱、劉O芹、林O鈺<br>
+            • <strong>(女) 560</strong>：楊O沛、林O琪、侯O晴（+904班1人）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 15: 908 班名冊 -->
+  <section class="slide" id="slide-908">
+    <p class="s-eyebrow">CLASS 908 · 隨車 6 車</p>
+    <h2 class="s-title">908 班分房與桌次名冊（男 6、女 3，計 9 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2140 (T6房)</strong>：<br>
+              王O陞(桌15)、楊O旭(桌15)、陳O霈(桌15)、陳O霆(桌15)、林O鋮(桌15)、林O稷(桌15)<br><br>
+            • <strong>(女) 4084 (3人)</strong>：<br>
+              阮O雲(桌15)、連O瑆(桌15)、曾O淯(桌15)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 505</strong>：楊O旭、陳O霆、林O鋮、林O稷<br>
+            • <strong>(男) 506</strong>：王O陞、陳O霈（+909班2人）<br><br>
+            • <strong>(女) 545 (3人)</strong>：<br>
+              阮O雲、連O瑆、曾O淯
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 16: 909 班名冊 -->
+  <section class="slide" id="slide-909">
+    <p class="s-eyebrow">CLASS 909 · 隨車 7 車</p>
+    <h2 class="s-title">909 班分房與桌次名冊（男 10、女 12，計 22 人）</h2>
+    <div class="s-body">
+      <div class="grid-deck-2">
+        <div class="card-slide">
+          <h4>🏨 10/21 墾丁福華渡假大飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 2133</strong>：簡O辰(桌16)、王O恩(桌17)、李O逸(桌16)、林O德(素)、陳O儒(桌16)、張O峻(桌16)<br>
+            • <strong>(男) 2132</strong>：吳O浩(桌17)、吳O漳(桌17)、李O諺(桌17)、林O翔(桌17)<br>
+            • <strong>(女) 2085</strong>：姚O慈(桌16)、張O軒(桌16)、許O羽(桌16)、藍O琳(桌17)<br>
+            • <strong>(女) 2086</strong>：林O琪(桌17)、張O寗(桌18)、陳O彤(桌16)、蔡O妍(桌16)<br>
+            • <strong>(女) 2120</strong>：何O瑜(桌17)、林O萱(桌16)、林O褕(桌17)、林O婕(桌17)
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏨 10/22 高雄義大天悅飯店</h4>
+          <p style="font-size:13px; line-height:1.6;">
+            • <strong>(男) 506</strong>：王O恩、李O逸（+908班2人）<br>
+            • <strong>(男) 507</strong>：吳O浩、吳O漳、李O諺、林O翔<br>
+            • <strong>(男) 508</strong>：簡O辰、林O德(素)、陳O儒、張O峻<br>
+            • <strong>(女) 563</strong>：姚O慈、張O軒、許O羽、藍O琳<br>
+            • <strong>(女) 565</strong>：林O琪、張O寗、陳O彤、蔡O妍<br>
+            • <strong>(女) 566</strong>：何O瑜、林O萱、林O褕、林O婕
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 17: 景點解說 1 -->
+  <section class="slide" id="slide-attract1">
+    <p class="s-eyebrow">ATTRACTIONS · 地質與民謠</p>
+    <h2 class="s-title">田寮月世界 ＆ 恆春民謠《思想起》</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <div class="card-slide" style="margin-bottom:10px;">
+            <h4>🌔 田寮月世界（惡地地質）</h4>
+            <div style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+              在地理學上稱為『惡地』，因青灰色泥岩質地軟弱且含鹽，受雨水長年侵蝕沖刷，泥岩吸水順坡流瀉，形成寸草不生的荒涼光禿鋸齒狀山脊。登上民國70年所建的『攬月樓』，可俯瞰如月球表面般的蒼茫壯觀景色。
+            </div>
+          </div>
+          <div class="card-slide">
+            <h4>🪕 恆春傳統民謠《思想起》</h4>
+            <div style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+              恆春最具代表性國寶級傳統民謠，月琴悠揚傳唱先民橫渡黑水溝拓墾之艱辛心境：「思想起，祖先鹹心過台灣，不知台灣生做啥款？思想起，海水絕深反成黑，在海山浮心漂心艱苦...碰到颱風攪大浪，心想那神明...」。
+            </div>
+          </div>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/moon_world_1.jpg" alt="田寮月世界">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 18: 景點解說 2 (海生館) -->
+  <section class="slide" id="slide-attract2">
+    <p class="s-eyebrow">ATTRACTIONS · 國境之南生態</p>
+    <h2 class="s-title">國立海洋生物博物館（館魚：燕魚）</h2>
+    <div class="s-body">
+      <div class="grid-deck-3">
+        <div class="card-slide">
+          <h4>🏞️ 台灣水域館</h4>
+          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
+            以「高山到海洋小水滴的旅行」為主題，從谷關龍谷瀑布、高山溪流（櫻花鉤吻鮭、苦花）、水庫、河口牡蠣養殖，一路延伸到浩瀚壯觀的大洋池（仿東部太平洋生態）。
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🪸 珊瑚王國館</h4>
+          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
+            呈現活珊瑚礁頂與垂直礁壁，擁有 <strong>84 公尺長</strong>夢幻海底隧道，並能近距離觀察白鯨（海中金絲雀）優雅在水中穿梭。
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🌍 世界水域館</h4>
+          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
+            全球首創 3D 虛擬無水水族館，展示古代海洋演化、高聳海藻森林、深海生物與極地水域超人氣企鵝家族。
+          </p>
+        </div>
+      </div>
+      <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <img class="img-slide" style="height:140px;" src="assets/img/nmmba_coral.png" alt="珊瑚王國">
+        <img class="img-slide" style="height:140px;" src="assets/img/nmmba_world.jpg" alt="世界水域">
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 19: 景點解說 3 (義大) -->
+  <section class="slide" id="slide-attract3">
+    <p class="s-eyebrow">ATTRACTIONS · 冒險與休閒</p>
+    <h2 class="s-title">義大遊樂世界 ＆ 購物廣場摩天輪</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <ul class="s-list">
+            <li><strong>希臘情境主題園區</strong>：全台唯一希臘主題，擁有衛城、藍白聖托里尼山城、特洛伊城三大區域。</li>
+            <li><strong>特洛伊城</strong>：15000 坪全台最大室內主題館，包含重現歷史之巨大木馬、地心歷險暗室雲霄飛車、飛越台灣模擬飛行。</li>
+            <li><strong>名品 Outlet 購物廣場</strong>：全台首創大型品牌 Outlet，擁有羅馬天幕造景與豐富美食街。</li>
+            <li><strong>海拔 215 米巨型摩天輪</strong>：直徑 80 公尺，南台灣最高景觀摩天輪，128 種炫彩燈光秀俯瞰高屏百萬夜景。</li>
+          </ul>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/eda_trojan_1.jpg" alt="特洛伊城木馬">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 20: 景點解說 4 (旗津與奇美) -->
+  <section class="slide" id="slide-attract4">
+    <p class="s-eyebrow">ATTRACTIONS · 史蹟與美學</p>
+    <h2 class="s-title">旗津風景區 ＆ 奇美博物館</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>⚓ 旗津史蹟（旗後砲台・星空隧道）</h4>
+          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+            • <strong>旗後砲台</strong>：清代海防要塞，營門上方題有「威震天南」，磚砌八卦牆極具傳統美學。<br>
+            • <strong>星空隧道</strong>：貫穿旗後山之軍事通道改造，隧道內彩繪十二星座夜光壁畫，出口即臨壯闊台灣海峽。<br>
+            • <strong>旗津天后宮</strong>：建於 1673 年，為高雄市最古老媽祖廟。
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>🏛️ 奇美博物館（許文龍創辦）</h4>
+          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+            由奇美實業創辦人許文龍先生捐資興建，秉持「共享給大眾的博物館」理念。館內典藏西洋繪畫雕塑、全球動物標本自然史、名琴樂器與古代兵器；戶外設有阿波羅噴泉與奧林帕斯神像橋。
+          </p>
+        </div>
+      </div>
+      <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <img class="img-slide" style="height:140px;" src="assets/img/cijin_fort_1.jpg" alt="旗後砲台">
+        <img class="img-slide" style="height:140px;" src="assets/img/chimei_1.jpg" alt="奇美博物館">
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 21: 學習單 是非題 -->
+  <section class="slide" id="slide-quiz1">
+    <p class="s-eyebrow">QUIZ · 海生館學習單</p>
+    <h2 class="s-title">海洋知識是非挑戰題（精選題解）</h2>
+    <div class="s-body">
+      <div class="grid-deck-3">
+        <div class="card-slide">
+          <h4>01. 小丑魚與海葵</h4>
+          <div style="font-size:14px; color:#ffffff; margin:6px 0;">題目：小丑魚和海葵有合作的行為嗎？</div>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">解答：【是】（互利共生）</div>
+          <div style="font-size:12px; color:var(--cf-text-dim); margin-top:4px;">
+            小丑魚受海葵有毒觸手保護，同時為海葵清理觸手雜質與引誘獵物。
+          </div>
+        </div>
+        <div class="card-slide">
+          <h4>02. 海馬是魚類嗎？</h4>
+          <div style="font-size:14px; color:#ffffff; margin:6px 0;">題目：海馬是否為魚類？</div>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">解答：【是】（硬骨魚類）</div>
+          <div style="font-size:12px; color:var(--cf-text-dim); margin-top:4px;">
+            海馬擁有鰓呼吸、背鰭，全身具骨質環片，分類上屬於輻鰭魚綱海龍魚科。
+          </div>
+        </div>
+        <div class="card-slide">
+          <h4>03. 魚有舌頭嗎？</h4>
+          <div style="font-size:14px; color:#ffffff; margin:6px 0;">題目：魚有舌骨，請問魚是否有舌頭？</div>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">解答：【是】（初級舌）</div>
+          <div style="font-size:12px; color:var(--cf-text-dim); margin-top:4px;">
+            魚類舌頭由舌骨支撐，表面覆有黏膜或小齒，主要用於吞嚥與固定獵物。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 22: 學習單 問答題精選 -->
+  <section class="slide" id="slide-quiz2">
+    <p class="s-eyebrow">QUIZ · 趣味海洋知識</p>
+    <h2 class="s-title">海生館問答題精選提要</h2>
+    <div class="s-body">
+      <table class="table-deck">
+        <thead><tr><th>題目</th><th>核心解答重點</th></tr></thead>
+        <tbody>
+          <tr><td><strong>珍珠如何形成？</strong></td><td>蚌貝為防止進入殼內的砂礫異物引發組織發炎，分泌碳酸鈣珍珠層包覆，累積數年而成。</td></tr>
+          <tr><td><strong>魷魚與花枝怎麼分？</strong></td><td><strong>魷魚</strong>（小管）鰭葉在尾部，有半透明幾丁質鞘；<strong>花枝</strong>（烏賊）鰭葉在身體周圍，有白色烏賊骨。</td></tr>
+          <tr><td><strong>魚的年齡如何判斷？</strong></td><td>看<strong>內耳石（耳石）</strong>橫切面生長同心輪紋，或將脊椎骨磨平觀察年輪。</td></tr>
+          <tr><td><strong>四大毒魚口訣？</strong></td><td>民間口訣：『<strong>一魟、二虎、三沙毛、四臭肚</strong>』（魟魚、獅子魚、鰻鯰、象魚）。</td></tr>
+          <tr><td><strong>珊瑚礁三大分類？</strong></td><td>1. 堡礁（澳洲大堡礁） 2. 環礁（東沙群島） 3. 裙礁（台灣墾丁貓鼻頭）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Slide 23: 行李清單 -->
+  <section class="slide" id="slide-pack">
+    <p class="s-eyebrow">CHECKLIST</p>
+    <h2 class="s-title">行前必備行李打包檢核清單</h2>
+    <div class="s-body">
+      <div class="grid-deck-3">
+        <div class="card-slide">
+          <h4>🆔 重要證件與金錢</h4>
+          <ul class="s-list" style="font-size:13px;">
+            <li>個人健保 IC 卡（隨身妥善保管）</li>
+            <li>適量零用金（紀念品與D2晚餐）</li>
+            <li>家中大門鑰匙、原子筆</li>
+          </ul>
+        </div>
+        <div class="card-slide">
+          <h4>👕 衣物與個人盥洗</h4>
+          <ul class="s-list" style="font-size:13px;">
+            <li>換洗衣物 2~3 套（含薄外套防風）</li>
+            <li><strong>自備牙刷、牙膏、毛巾</strong>（飯店不提供）</li>
+            <li>大行李箱（置車底）＋隨身雙肩包</li>
+            <li>換洗髒衣物塑膠袋數個</li>
+          </ul>
+        </div>
+        <div class="card-slide">
+          <h4>💊 隨身防護與常備藥品</h4>
+          <ul class="s-list" style="font-size:13px;">
+            <li>個人常備藥物（氣喘、暈車藥等）</li>
+            <li>環保水壺（隨時補充水分）</li>
+            <li>遮陽帽、太陽眼鏡、防曬乳、防蚊液</li>
+            <li>輕便雨衣、行動電源與充電線</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 24: 個人守則 -->
+  <section class="slide" id="slide-rules">
+    <p class="s-eyebrow">SAFETY FIRST</p>
+    <h2 class="s-title">行程個人重要安全守則</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <ul class="s-list">
+            <li><strong>守時第一</strong>：準時抵達指定集合地點，各班班長清點人數後向隨隊師長回報。</li>
+            <li><strong>乘車安全</strong>：全程繫妥安全帶，車輛行進間嚴禁站立走動，頭手不可伸出窗外。</li>
+            <li><strong>嚴禁脫隊</strong>：全程團隊行動，三五成群互相照應，絕不擅自進入無人危險區域。</li>
+            <li><strong>未經安排嚴禁戲水</strong>：行程中未經學校許可，絕對禁止私自游泳玩水。</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="s-list">
+            <li><strong>嚴禁違禁品</strong>：嚴禁攜帶菸酒、檳榔、不良書刊、牌具等，違者依校規嚴處。</li>
+            <li><strong>尊重公私分際</strong>：嚴禁私下聯絡領隊，禁止私加領隊 LINE、FB、IG 等社群。</li>
+            <li><strong>愛護公物</strong>：飯店內嚴禁使用染髮劑或指甲油，損壞物品需照價賠償。</li>
+            <li><strong>身體不適即時通報</strong>：遇有突發狀況或身體微恙，立刻向導師或領隊告知。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 25: 住宿須知 -->
+  <section class="slide" id="slide-hotel">
+    <p class="s-eyebrow">HOTEL GUIDELINES</p>
+    <h2 class="s-title">飯店住宿生活公約與逃生要領</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🛌 住宿生活公約</h4>
+          <ul class="s-list" style="font-size:13px;">
+            <li>走廊各區域放輕腳步、輕聲細語，共同維護住宿品質。</li>
+            <li>夜間按規定時間準時就寢，晚點名務必在自己房內。</li>
+            <li><strong>嚴禁擅自調換房間</strong>或跨房喧嘩聊天。</li>
+            <li>保護自身安全，<strong>絕對禁止在彈簧床上彈跳</strong>。</li>
+            <li>使用過的濕毛巾放回浴室架，切勿丟在被褥上。</li>
+          </ul>
+        </div>
+        <div class="card-slide">
+          <h4>🧯 防災避難逃生要領</h4>
+          <ul class="s-list" style="font-size:13px;">
+            <li>進房第一件事：查看門後安全避難逃生路線與安全門位置。</li>
+            <li>若遇火災警報：冷靜不慌張，聽從服務人員引導。</li>
+            <li>以浸濕衣物捂住口鼻、放低身段往安全梯逃生。</li>
+            <li><strong>下樓千萬不可搭乘電梯！</strong></li>
+            <li>出房門前先以手背測試門板溫度，防止開門爆燃。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 26: 防暈車指壓 -->
+  <section class="slide" id="slide-motion">
+    <p class="s-eyebrow">HEALTH ＆ WELLNESS</p>
+    <h2 class="s-title">預防暈車妙方 ＆ 三大指壓穴位</h2>
+    <div class="s-body">
+      <div class="grid-deck-3">
+        <div class="card-slide">
+          <h4>👉 合谷穴</h4>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">效用：緩解頭痛、提神</div>
+          <div style="font-size:12.5px; color:var(--cf-text-dim); margin-top:4px;">
+            手心向下，拇指食指併攏時虎口肌肉最高突起處。以另一手拇指垂直揉壓。
+          </div>
+        </div>
+        <div class="card-slide">
+          <h4>👉 內關穴</h4>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">效用：止吐、平胃氣、安神</div>
+          <div style="font-size:12.5px; color:var(--cf-text-dim); margin-top:4px;">
+            手心向上，腕橫紋正中直上三橫指處，兩條大筋中間凹陷處。
+          </div>
+        </div>
+        <div class="card-slide">
+          <h4>👉 足三里穴</h4>
+          <div style="font-size:13px; color:var(--cf-accent); font-weight:700;">效用：消除噁心反胃</div>
+          <div style="font-size:12.5px; color:var(--cf-text-dim); margin-top:4px;">
+            膝蓋外側凹陷（外膝眼）直下四指橫寬、脛骨旁開一橫指處。
+          </div>
+        </div>
+      </div>
+      <div class="tip" style="margin-top:14px;">
+        <span class="tip-tag">抗暈小撇步</span>
+        <div class="tip-body">前一晚睡眠充足不熬夜；乘車前三小時不吃過飽；易暈車者搭車時盡量選擇前排靠窗，將冷氣出風口朝臉部保持通風。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 27: 急救常識 -->
+  <section class="slide" id="slide-firstaid">
+    <p class="s-eyebrow">EMERGENCY FIRST AID</p>
+    <h2 class="s-title">急救小常識與緊急應變</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🩸 流鼻血處置</h4>
+          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+            1. 患者坐正，<strong>頭部稍微向前傾</strong>（切勿後仰，以免血液倒流嗆入氣管！）。<br>
+            2. 用乾淨濕紙巾塞住鼻孔，以手指捏緊鼻翼軟骨壓迫 10 分鐘。<br>
+            3. 在額頭與鼻樑處冰敷冷敷，促使血管收縮止血。
+          </p>
+        </div>
+        <div class="card-slide">
+          <h4>☀️ 中暑熱傷害處置</h4>
+          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
+            1. 立即將患者移至陰涼通風處，解開領口與腰帶。<br>
+            2. 以濕毛巾、冷水或冰袋敷於頸部、腋下及鼠蹊部降溫。<br>
+            3. 意識清楚者可少量多次補充淡鹽水或運動飲料，並通報師長。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 28: 結語 -->
+  <section class="slide slide-cover" id="slide-end">
+    <p class="s-eyebrow">南投縣立南投國民中學</p>
+    <h1 class="s-title-xl" style="font-size: 46px;">青春不留白・精彩每一刻！</h1>
+    <p class="s-sub" style="font-size: 22px; color: var(--cf-accent); margin-top: 14px;">
+      祝 全體九年級師生 畢旅平安順利、收穫滿載、珍藏最美回憶！
+    </p>
+  </section>
+
+</main>
+
+<script src="lesson-deck.js"></script>
+</body>
+</html>

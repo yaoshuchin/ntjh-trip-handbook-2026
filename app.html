@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>南投國中 115學年度畢業旅行行動手冊</title>
+  <meta name="description" content="南投縣立南投國民中學 115學年度 畢業旅行行動手冊（115.10.21-115.10.23）。提供行程總覽、房號車次即時搜尋、景點導覽、海生館學習單互動答題與行李打包清單。">
+  <meta name="theme-color" content="#0284c7">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230284c7'/%3E%3Cpath d='M9 18l4 4 10-10' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- 主樣式表 -->
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <!-- ================== 頂部 Hero Header ================== -->
+  <header class="hero-header">
+    <div class="hero-inner">
+      <div class="hero-badge-wrap">
+        <span class="badge-tag">🏫 南投縣立南投國民中學</span>
+        <span class="badge-tag highlight">三天二夜</span>
+        <span class="badge-tag">115.10.21(三) ～ 10.23(五)</span>
+        <span class="badge-tag">共 178 位同學・12 位師長</span>
+      </div>
+      <h1 class="hero-title">115學年度 畢業旅行行動手冊</h1>
+      <p class="hero-subtitle">
+        集合出發：10/21 (三) 07:30 學校中庭集合 ｜ 探索惡地奇景・國境之南海洋・義大歡樂狂歡
+      </p>
+
+      <!-- 快速住宿與電話撥號卡片 -->
+      <div class="hero-quick-cards" id="hero-hotels-container">
+        <!-- 由 JavaScript 動態生成 -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ================== 主導航 Tabs (桌機 & 平板) ================== -->
+  <nav class="nav-tab-bar" aria-label="主要分頁導航">
+    <div class="nav-tabs-container">
+      <button class="nav-tab-btn active" data-tab="itinerary">📅 行程總覽</button>
+      <button class="nav-tab-btn" data-tab="roster">🔍 查房分車</button>
+      <button class="nav-tab-btn" data-tab="buses">🚌 團務車次</button>
+      <button class="nav-tab-btn" data-tab="attractions">🏖️ 景點導覽</button>
+      <button class="nav-tab-btn" data-tab="quiz">🎯 海生館學習單</button>
+      <button class="nav-tab-btn" data-tab="checklist">🎒 行李清單</button>
+      <button class="nav-tab-btn" data-tab="notices">⚠️ 生活須知</button>
+    </div>
+  </nav>
+
+  <!-- ================== 主內容區域 ================== -->
+  <main class="main-content">
+    
+    <!-- 1. 行程總覽分頁 -->
+    <section class="tab-pane active" id="tab-itinerary">
+      <div class="section-header">
+        <h2 class="section-title">📅 三日行程時間與路線</h2>
+        <p class="section-desc">點選下方天數切換行程細節、用餐安排與重點時間</p>
+      </div>
+
+      <!-- 天數切換按鈕組 -->
+      <div class="day-selector" id="day-selector">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+
+      <!-- 當日行程內容容器 -->
+      <div id="itinerary-content-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 2. 查房分車搜尋分頁 -->
+    <section class="tab-pane" id="tab-roster">
+      <div class="section-header">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <h2 class="section-title">🔍 房號、桌次與車次即時速查</h2>
+            <p class="section-desc">輸入同學姓名、房號、班級（901~909）或桌次即可秒查！</p>
+          </div>
+          <button onclick="window.print()" class="quick-btn" style="border:1px solid #cbd5e1; padding:6px 14px;">
+            🖨️ 列印查房名冊
+          </button>
+        </div>
+      </div>
+
+      <!-- 搜尋輸入框 -->
+      <div class="search-bar-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="roster-search-input" class="search-input" placeholder="輸入同學姓名、房號 (如 2141)、桌次或關鍵字...">
+        <button id="search-clear-btn" class="search-clear-btn" aria-label="清除搜尋">✕</button>
+      </div>
+
+      <!-- 班級快速篩選晶片 -->
+      <div style="margin-bottom:8px;">
+        <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-right:6px;">班級篩選：</span>
+        <div class="filter-chips-wrap" id="class-filter-chips">
+          <!-- 由 JavaScript 生成 -->
+        </div>
+      </div>
+
+      <!-- 車次快速篩選晶片 -->
+      <div style="margin-bottom:12px;">
+        <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-right:6px;">車次篩選：</span>
+        <div class="filter-chips-wrap" id="bus-filter-chips">
+          <!-- 由 JavaScript 生成 -->
+        </div>
+      </div>
+
+      <!-- 結果控制列 -->
+      <div class="search-controls-row">
+        <div class="results-stats" id="results-count">符合筆數：178 位</div>
+        <div class="view-mode-toggle">
+          <button class="view-btn active" data-view="table">📋 表格視圖</button>
+          <button class="view-btn" data-view="card">🗂️ 卡片視圖</button>
+        </div>
+      </div>
+
+      <!-- 表格視圖容器 -->
+      <div class="roster-table-wrap" id="roster-table-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+
+      <!-- 卡片視圖容器 (手機端) -->
+      <div class="roster-cards-grid" id="roster-cards-container" style="display:none;">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 3. 團務車次分頁 -->
+    <section class="tab-pane" id="tab-buses">
+      <div class="section-header">
+        <h2 class="section-title">🚌 團務編組與隨車師長</h2>
+        <p class="section-desc">全團 7 輛專車編制、各車班級名額與隨車導師名單</p>
+      </div>
+      <div id="buses-content-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 4. 景點導覽分頁 -->
+    <section class="tab-pane" id="tab-attractions">
+      <div class="section-header">
+        <h2 class="section-title">🏖️ 景點圖文導覽與地質人文</h2>
+        <p class="section-desc">深入認識月世界惡地、恆春民謠、海生館三大主題館與奇美博物館</p>
+      </div>
+      <div id="attractions-content-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 5. 海生館學習單互動答題分頁 -->
+    <section class="tab-pane" id="tab-quiz">
+      <div class="section-header">
+        <h2 class="section-title">🎯 國立海洋生物博物館・互動學習單</h2>
+        <p class="section-desc">在車上或參觀海生館時測試海洋小知識！點選按鈕或點擊卡片查看解答與解析</p>
+      </div>
+
+      <!-- 是非題區塊 -->
+      <div class="quiz-section">
+        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-dark); margin-bottom:12px;">
+          一、是非挑戰題 (點選即時驗證)
+        </h3>
+        <div id="quiz-tf-container">
+          <!-- 由 JavaScript 生成 -->
+        </div>
+      </div>
+
+      <!-- 問答翻卡區塊 -->
+      <div class="quiz-section">
+        <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-dark); margin-bottom:12px;">
+          二、海洋生物問答庫 (共 25 題，點擊展開解答)
+        </h3>
+        <div id="quiz-qa-container">
+          <!-- 由 JavaScript 生成 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 行李清單分頁 -->
+    <section class="tab-pane" id="tab-checklist">
+      <div class="section-header">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <h2 class="section-title">🎒 行前行李打包清單</h2>
+            <p class="section-desc">打勾記錄自動儲存在手機本機，整理行李不再丟三落四！</p>
+          </div>
+          <button id="reset-checklist-btn" class="quick-btn" style="border:1px solid #cbd5e1; padding:6px 12px; color:var(--text-muted);">
+            🔄 重設勾選
+          </button>
+        </div>
+      </div>
+
+      <!-- 打包進度條 -->
+      <div class="progress-box">
+        <div class="progress-header">
+          <span>📦 打包完成進度</span>
+          <span id="progress-text" style="color:var(--primary);">0 / 18 項 (0%)</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- 清單項目容器 -->
+      <div id="checklist-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 7. 生活須知分頁 -->
+    <section class="tab-pane" id="tab-notices">
+      <div class="section-header">
+        <h2 class="section-title">⚠️ 生活安全須知 ＆ 應變指引</h2>
+        <p class="section-desc">行前叮嚀、住宿生活公約、防暈車穴位指壓與急救常識</p>
+      </div>
+      <div id="notices-content-container">
+        <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================== 手機底部導航列 (Mobile Bottom Nav) ================== -->
+  <nav class="mobile-bottom-nav" aria-label="手機快捷導航">
+    <button class="mobile-nav-btn active" data-tab="itinerary">
+      <span>📅</span>
+      <span>行程</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="roster">
+      <span>🔍</span>
+      <span>查房</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="buses">
+      <span>🚌</span>
+      <span>車次</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="attractions">
+      <span>🏖️</span>
+      <span>景點</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="quiz">
+      <span>🎯</span>
+      <span>學習單</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="checklist">
+      <span>🎒</span>
+      <span>清單</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="notices">
+      <span>⚠️</span>
+      <span>須知</span>
+    </button>
+  </nav>
+
+  <!-- 引用資料庫與互動腳本 -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
