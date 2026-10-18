@@ -87,7 +87,7 @@ const TRIP_DATA = {
         { time: "08:20~11:00", title: "旗津風景區采風巡禮", desc: "參訪旗津海岸公園、漫步夢幻星空隧道、登旗後砲台俯瞰高雄港、拜訪古老旗後天后宮與品味旗津老街", icon: "ship" },
         { time: "11:30~12:30", title: "港都美味午餐", desc: "享用美味午宴，各班整齊就座", icon: "utensils" },
         { time: "13:30~16:00", title: "奇美博物館", desc: "參觀創辦人許文龍先生畢生心血之私立博物館瑰寶，走訪奧林帕斯橋、阿波羅噴泉、西洋藝術品與動物標本常設展", icon: "landmark" },
-        { time: "16:30~17:30", title: "921地震公園暨南投國際會展中心園區", desc: "回顧家鄉地景與文化展館，留下畢旅團體美好合影", icon: "camera" },
+        { time: "16:30~17:30", title: "名間親子生態園區", desc: "走訪南投最大 2.6 公頃全齡共融生態公園，暢玩 5 米高彩虹滑梯、大草坪歡樂合影", icon: "camera" },
         { time: "17:30~18:00", title: "快樂賦歸！平安返抵南投國中", desc: "專車安全返校，清點個人物品與行李，依序互道珍重、回家與家人分享美好回憶！", icon: "home" }
       ]
     }
@@ -393,103 +393,376 @@ const TRIP_DATA = {
 
   attractions: [
     {
-      id: "moon-world",
-      name: "田寮月世界",
-      tag: "Day 1 地質奧秘",
-      subtitle: "如月球表面般的荒涼崎嶇惡地奇觀",
-      desc: "月世界在地理學上稱為『惡地』，係雨水與河水在質地軟弱、色呈青灰且略含鹽質的泥岩區，經年累月強烈侵蝕而成的荒涼崎嶇地形。泥岩顆粒細小、膠結鬆散，透水性低，遇雨即順坡流瀉，植物極難生長，因而形成寸草不生的光禿鋸齒狀山脊。民國70年於此地建造中國涼亭式建築『攬月樓』，登上平台可遠眺宛如月球般的蒼茫絕景。",
-      images: [
-        "assets/img/moon_world_1.jpg",
-        "assets/img/moon_world_2.jpg",
-        "assets/img/moon_world_3.jpg"
-      ]
+        "id": "moon-world",
+        "name": "田寮月世界",
+        "tag": "Day 1 地質奧秘",
+        "subtitle": "如月球表面般的荒涼崎嶇惡地奇觀",
+        "googleMapUrl": "https://maps.google.com/?q=田寮月世界地質公園",
+        "desc": "月世界在地理學上稱為『惡地』，係雨水與河水在質地軟弱、色呈青灰且略含鹽質的泥岩區，經年累月強烈侵蝕而成的荒涼崎嶇地形。泥岩顆粒細小、膠結鬆散，透水性低，遇雨即順坡流瀉，植物極難生長，因而形成寸草不生的光禿鋸齒狀山脊。民國70年於此地建造中國涼亭式建築『攬月樓』，登上平台可遠眺宛如月球般的蒼茫絕景。",
+        "images": [
+            "assets/img/moon_world_1.jpg",
+            "assets/img/moon_world_2.jpg",
+            "assets/img/moon_world_3.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "高雄旅遊網｜田寮月世界地質公園",
+                "url": "https://khh.travel/zh-tw/attractions/detail/205"
+            },
+            {
+                "title": "茂林國家風景區｜田寮月世界泥岩惡地",
+                "url": "https://www.maolin-nsa.gov.tw/04000302.html"
+            },
+            {
+                "title": "玩全台灣旅遊網｜田寮月世界步道導覽",
+                "url": "https://okgo.tw/butyview.html?id=230"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【空拍奇觀】田寮月世界惡地全貌導覽",
+                "url": "https://www.youtube.com/results?search_query=田寮月世界+空拍"
+            },
+            {
+                "title": "【台灣地質驚奇】漫步月世界嫦娥奔月步道",
+                "url": "https://www.youtube.com/results?search_query=田寮月世界+步道導覽"
+            },
+            {
+                "title": "【自然教育】泥岩惡地地形是如何形成的？",
+                "url": "https://www.youtube.com/results?search_query=田寮月世界+地質形成"
+            }
+        ]
     },
     {
-      id: "folk-song",
-      name: "恆春民謠《思想起》",
-      tag: "Day 1 在地人文",
-      subtitle: "國寶傳唱・先民拓墾台灣的心路歷程",
-      desc: "《思想起》是恆春半島最具代表性的傳統民謠。歌詞訴說著明清時期漢人先民橫渡黑水溝來台拓墾的艱辛歲月：「思想起，祖先鹹心過台灣，不知台灣生做啥款？思想起，海水絕深反成黑，在海山浮心漂心艱苦。思想起，黑水要過幾層啊，心該定，碰到颱風攪大浪，有的抬頭看天頂，有的心想那神明...」。伴隨月琴悠揚旋律，感受國境之南深厚的人文底蘊。",
-      images: [
-        "assets/img/maobitou_1.jpg"
-      ]
+        "id": "folk-song",
+        "name": "恆春民謠《思想起》",
+        "tag": "Day 1 在地人文",
+        "subtitle": "國寶傳唱・先民拓墾台灣的心路歷程",
+        "googleMapUrl": "https://maps.google.com/?q=恆春民謠館",
+        "desc": "《思想起》是恆春半島最具代表性的傳統民謠。歌詞訴說著明清時期漢人先民橫渡黑水溝來台拓墾的艱辛歲月：「思想起，祖先鹹心過台灣，不知台灣生做啥款？思想起，海水絕深反成黑，在海山浮心漂心艱苦。思想起，黑水要過幾層啊，心該定，碰到颱風攪大浪，有的抬頭看天頂，有的心想那神明...」。伴隨月琴悠揚旋律，感受國境之南深厚的人文底蘊。",
+        "images": [
+            "assets/img/maobitou_1.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "文化部臺灣大百科全書｜恆春民謠思想起",
+                "url": "https://nrch.culture.tw/twpedia.aspx?id=10928"
+            },
+            {
+                "title": "屏東縣政府文化處｜國寶傳唱恆春民謠",
+                "url": "https://www.cultural.pthg.gov.tw/"
+            },
+            {
+                "title": "國立傳統藝術中心｜臺灣音樂館民謠采風",
+                "url": "https://music.ncfta.gov.tw/"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【國寶陳達】月琴原聲原影傳唱《思想起》",
+                "url": "https://www.youtube.com/results?search_query=陳達+思想起+月琴"
+            },
+            {
+                "title": "【屏東民謠百年】聽見國境之南的半島之歌",
+                "url": "https://www.youtube.com/results?search_query=恆春民謠+思想起+紀錄片"
+            },
+            {
+                "title": "【在地文化】恆春月琴傳習與先民渡海故事",
+                "url": "https://www.youtube.com/results?search_query=恆春半島+思想起+文化傳承"
+            }
+        ]
     },
     {
-      id: "nmmba",
-      name: "國立海洋生物博物館 (海生館)",
-      tag: "Day 1 生態殿堂",
-      subtitle: "亞洲知名水族博物館・三大常設主題展館",
-      desc: "國立海洋生物博物館位於屏東縣車城鄉，海生館的館魚為『燕魚』。全館分為三大主題展館：\n1. 【台灣水域館】：取景谷關龍谷瀑布為起點，引領參觀者從小水滴的旅行展開冒險，歷經高山溪流、水庫、牡蠣養殖、河口，終至壯麗的大洋池（仿台灣東部大洋生態）。\n2. 【珊瑚王國館】：以熱帶雨林之姿展現絢麗活珊瑚礁頂、礁壁與80公尺長的海底隧道，近距離與小白鯨相遇。\n3. 【世界水域館】：全球首創3D虛擬實境之無水水族館，涵蓋古代海洋、海藻森林、深海水域與極地水域（可愛企鵝家族）。",
-      images: [
-        "assets/img/nmmba_cover_1.jpg",
-        "assets/img/nmmba_cover_2.jpg",
-        "assets/img/nmmba_taiwan.png",
-        "assets/img/nmmba_coral.png",
-        "assets/img/nmmba_world.jpg"
-      ]
+        "id": "nmmba",
+        "name": "國立海洋生物博物館 (海生館)",
+        "tag": "Day 1 生態殿堂",
+        "subtitle": "亞洲知名水族博物館・三大常設主題展館",
+        "googleMapUrl": "https://maps.google.com/?q=國立海洋生物博物館",
+        "desc": "國立海洋生物博物館位於屏東縣車城鄉，海生館的館魚為『燕魚』。全館分為三大主題展館：\n1. 【台灣水域館】：取景谷關龍谷瀑布為起點，引領參觀者從小水滴的旅行展開冒險，歷經高山溪流、水庫、牡蠣養殖、河口，終至壯麗的大洋池（仿台灣東部大洋生態）。\n2. 【珊瑚王國館】：以熱帶雨林之姿展現絢麗活珊瑚礁頂、礁壁與84公尺長的海底隧道，近距離與小白鯨相遇。\n3. 【世界水域館】：全球首創3D虛擬實境之無水水族館，涵蓋古代海洋、海藻森林、深海水域與極地水域（可愛企鵝家族）。",
+        "images": [
+            "assets/img/nmmba_cover_1.jpg",
+            "assets/img/nmmba_cover_2.jpg",
+            "assets/img/nmmba_taiwan.png",
+            "assets/img/nmmba_coral.png",
+            "assets/img/nmmba_world.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "國立海洋生物博物館官方網站",
+                "url": "https://www.nmmba.gov.tw/"
+            },
+            {
+                "title": "大鵬灣國家風景區｜海生館展區詳細介紹",
+                "url": "https://www.dbnsa.gov.tw/Attractions-Content.aspx?lang=1&sno=04000188"
+            },
+            {
+                "title": "屏東旅遊網｜車城海生館水族世界導覽",
+                "url": "https://i-pingtung.com/"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【海生館三大展館完整開箱】大洋池餵食秀直擊",
+                "url": "https://www.youtube.com/results?search_query=國立海洋生物博物館+完整導覽"
+            },
+            {
+                "title": "【小白鯨海中金絲雀】珊瑚王國海底隧道特寫",
+                "url": "https://www.youtube.com/results?search_query=海生館+小白鯨+海底隧道"
+            },
+            {
+                "title": "【極地企鵝與巨藻森林】世界水域館沉浸體驗",
+                "url": "https://www.youtube.com/results?search_query=海生館+企鵝餵食+巨藻森林"
+            }
+        ]
     },
     {
-      id: "maobitou",
-      name: "貓鼻頭風景區",
-      tag: "Day 1 國境之南",
-      subtitle: "台灣海峽與巴士海峽的分界指標",
-      desc: "貓鼻頭位於恆春半島西南頂端，向巴士海峽延伸而出，與東側的鵝鑾鼻形成臺灣最南的兩端，更是臺灣海峽與巴士海峽的天然分界點。長時間受強烈海蝕與海流沖刷，形成了崩崖、壺穴、礁柱、海蝕溝等奇特地形，屬於典型的隆起珊瑚礁海岸（裙礁）。遠眺海面波瀾壯闊，海風徐徐，是認識海洋地質的天然教室。",
-      images: [
-        "assets/img/maobitou_1.jpg",
-        "assets/img/maobitou_2.jpg"
-      ]
+        "id": "maobitou",
+        "name": "貓鼻頭風景區",
+        "tag": "Day 1 國境之南",
+        "subtitle": "台灣海峽與巴士海峽的分界指標",
+        "googleMapUrl": "https://maps.google.com/?q=貓鼻頭風景區",
+        "desc": "貓鼻頭位於恆春半島西南頂端，向巴士海峽延伸而出，與東側的鵝鑾鼻形成臺灣最南的兩端，更是臺灣海峽與巴士海峽的天然分界點。長時間受強烈海蝕與海流沖刷，形成了崩崖、壺穴、礁柱、海蝕溝等奇特地形，屬於典型的隆起珊瑚礁海岸（裙礁）。遠眺海面波瀾壯闊，海風徐徐，是認識海洋地質的天然教室。",
+        "images": [
+            "assets/img/maobitou_1.jpg",
+            "assets/img/maobitou_2.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "墾丁國家公園管理處｜貓鼻頭遊憩區導覽",
+                "url": "https://www.ktnp.gov.tw/News_Content.aspx?n=855&s=2541"
+            },
+            {
+                "title": "交通部觀光署｜貓鼻頭海蝕地形指標",
+                "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0001121&id=2555"
+            },
+            {
+                "title": "玩全台灣旅遊網｜貓鼻頭裙礁地質公園",
+                "url": "https://okgo.tw/butyview.html?id=250"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【雙海交界壯闊空拍】走訪貓鼻頭裙礁崩崖海岸",
+                "url": "https://www.youtube.com/results?search_query=貓鼻頭+空拍+海蝕地形"
+            },
+            {
+                "title": "【大自然鬼斧神工】認識貓鼻頭地質壺穴與礁柱",
+                "url": "https://www.youtube.com/results?search_query=貓鼻頭+地質解說"
+            },
+            {
+                "title": "【恆春半島南端采風】貓鼻頭落日與海風步道",
+                "url": "https://www.youtube.com/results?search_query=貓鼻頭風景區+導覽"
+            }
+        ]
     },
     {
-      id: "eda-theme-park",
-      name: "義大遊樂世界",
-      tag: "Day 2 狂歡冒險",
-      subtitle: "全台唯一希臘情境主題樂園・47項遊樂設施獨冠全台",
-      desc: "坐落於高雄大樹區觀音山麓，以希臘神話與愛琴海風情打造：\n• 【衛城】：古希臘神殿建築，設有大型劇院與演藝秀。\n• 【聖托里尼山城】：重現藍白相間愛琴海浪漫海島風情，戶外設有高達55公尺的『天旋地轉』、落差33公尺的『飛越愛情海』、以及亞洲唯一U型滑板『極限挑戰』。\n• 【特洛伊城】：重現木馬屠城記歷史場景，占地15000坪全台最大室內主題館，無畏烈日或風雨！熱門設施包含萬聖屋、飛越台灣模擬飛行、地心歷險暗室雲霄飛車等。",
-      images: [
-        "assets/img/eda_1.jpg",
-        "assets/img/eda_2.jpg",
-        "assets/img/eda_trojan_1.jpg",
-        "assets/img/eda_trojan_2.jpg"
-      ]
+        "id": "eda-theme-park",
+        "name": "義大遊樂世界",
+        "tag": "Day 2 狂歡冒險",
+        "subtitle": "全台唯一希臘情境主題樂園・47項遊樂設施獨冠全台",
+        "googleMapUrl": "https://maps.google.com/?q=義大遊樂世界",
+        "desc": "坐落於高雄大樹區觀音山麓，以希臘神話與愛琴海風情打造：\n• 【衛城】：古希臘神殿建築，設有大型劇院與演藝秀。\n• 【聖托里尼山城】：重現藍白相間愛琴海浪漫海島風情，戶外設有高達55公尺的『天旋地轉』、落差33公尺的『飛越愛情海』、以及亞洲唯一U型滑板『極限挑戰』。\n• 【特洛伊城】：重現木馬屠城記歷史場景，占地15000坪全台最大室內主題館，無畏烈日或風雨！熱門設施包含萬聖屋、飛越台灣模擬飛行、地心歷險暗室雲霄飛車等。",
+        "images": [
+            "assets/img/eda_1.jpg",
+            "assets/img/eda_2.jpg",
+            "assets/img/eda_trojan_1.jpg",
+            "assets/img/eda_trojan_2.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "義大遊樂世界官方網站",
+                "url": "http://www.edathemepark.com.tw/"
+            },
+            {
+                "title": "高雄旅遊網｜義大遊樂世界主題園區",
+                "url": "https://khh.travel/zh-tw/attractions/detail/206"
+            },
+            {
+                "title": "交通部觀光署｜義大世界希臘神話樂園",
+                "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0001120&id=A12-00216"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【義大遊樂世界全攻略】特洛伊城堡室內設施實測",
+                "url": "https://www.youtube.com/results?search_query=義大遊樂世界+特洛伊城堡+攻略"
+            },
+            {
+                "title": "【高空尖叫極限】天旋地轉與飛越愛情海實拍",
+                "url": "https://www.youtube.com/results?search_query=義大+天旋地轉+實拍"
+            },
+            {
+                "title": "【飛越台灣模擬飛行】身歷其境震撼飛行劇場",
+                "url": "https://www.youtube.com/results?search_query=義大+飛越台灣+開箱"
+            }
+        ]
     },
     {
-      id: "eda-mall",
-      name: "義大世界購物廣場 ＆ 摩天輪",
-      tag: "Day 2 時尚休閒",
-      subtitle: "海拔215公尺南台灣最高摩天輪・璀璨夜景名品商場",
-      desc: "全台灣首創大型名品Outlet商場，佔地58000坪，擁有羅馬天幕造景與豐富的美食天地。最著名的地標為直徑80公尺、座落於海拔215公尺頂樓的巨型摩天輪，是南台灣最高的景觀摩天輪。當夜幕低垂，128種炫麗炫彩燈光秀啟動，坐在車廂內可飽覽高屏山景、佛光山與義大夜景，為畢旅留下最璀璨的夜間記憶。",
-      images: [
-        "assets/img/eda_mall_1.jpg",
-        "assets/img/eda_ferris_wheel.jpg"
-      ]
+        "id": "eda-mall",
+        "name": "義大世界購物廣場 ＆ 摩天輪",
+        "tag": "Day 2 時尚休閒",
+        "subtitle": "海拔215公尺南台灣最高摩天輪・璀璨夜景名品商場",
+        "googleMapUrl": "https://maps.google.com/?q=義大世界購物廣場",
+        "desc": "全台灣首創大型名品Outlet商場，佔地58000坪，擁有羅馬天幕造景與豐富的美食天地。最著名的地標為直徑80公尺、座落於海拔215公尺頂樓的巨型摩天輪，是南台灣最高的景觀摩天輪。當夜幕低垂，128種炫麗炫彩燈光秀啟動，坐在車廂內可飽覽高屏山景、佛光山與義大夜景，為畢旅留下最璀璨的夜間記憶。",
+        "images": [
+            "assets/img/eda_mall_1.jpg",
+            "assets/img/eda_ferris_wheel.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "義大世界購物廣場官方網站",
+                "url": "http://www.edamall.com.tw/"
+            },
+            {
+                "title": "義大摩天輪官方設施票價與介紹",
+                "url": "http://www.edathemepark.com.tw/Website/ferriswheel.aspx"
+            },
+            {
+                "title": "高雄旅遊網｜義大購物 Outlet 廣場導覽",
+                "url": "https://khh.travel/"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【義大摩天輪夜景實拍】海拔215公尺俯瞰高屏夜景",
+                "url": "https://www.youtube.com/results?search_query=義大摩天輪+夜景"
+            },
+            {
+                "title": "【全台最大Outlet商場開箱】羅馬天幕與美食街巡禮",
+                "url": "https://www.youtube.com/results?search_query=義大世界購物廣場+導覽"
+            },
+            {
+                "title": "【128種璀璨燈光秀】義大夜間縮時攝影景觀",
+                "url": "https://www.youtube.com/results?search_query=義大摩天輪+燈光秀+縮時"
+            }
+        ]
     },
     {
-      id: "cijin",
-      name: "旗津風景區（砲台・天后宮・星空隧道）",
-      tag: "Day 3 港都史蹟",
-      subtitle: "高雄發祥地・古砲台、媽祖廟與十二星座浪漫海隧",
-      desc: "旗津（舊稱旗後）是高雄市最早開墾繁榮之地，原為平埔馬卡道族居住地：\n• 【旗後砲台】：清代扼守打狗港門戶之海防要塞，營門上方題有『威震天南』，磚砌字牆隱含傳統建築美學。\n• 【旗後天后宮】：建於清康熙12年（1673年），是高雄市歷史最悠久的媽祖廟，香火鼎盛，庇佑討海捕魚子民數百年。\n• 【星空隧道】：原為貫穿旗後山的軍事隧道，市府改造為木棧自行車道，隧道壁面彩繪夜光十二星座與蓄光石，出隧道即見壯闊的台灣海峽與防波堤浪花。",
-      images: [
-        "assets/img/cijin_fort_1.jpg",
-        "assets/img/cijin_fort_2.jpg",
-        "assets/img/cijin_temple.jpg",
-        "assets/img/cijin_tunnel_1.jpg",
-        "assets/img/cijin_tunnel_2.jpg"
-      ]
+        "id": "cijin",
+        "name": "旗津風景區（砲台・天后宮・星空隧道）",
+        "tag": "Day 3 港都史蹟",
+        "subtitle": "高雄發祥地・古砲台、媽祖廟與十二星座浪漫海隧",
+        "googleMapUrl": "https://maps.google.com/?q=旗津星空隧道",
+        "desc": "旗津（舊稱旗後）是高雄市最早開墾繁榮之地，原為平埔馬卡道族居住地：\n• 【旗後砲台】：清代扼守打狗港門戶之海防要塞，營門上方題有『威震天南』，磚砌字牆隱含傳統建築美學。\n• 【旗後天后宮】：建於清康熙12年（1673年），是高雄市歷史最悠久的媽祖廟，香火鼎盛，庇佑討海捕魚子民數百年。\n• 【星空隧道】：原為貫穿旗後山的軍事隧道，市府改造為木棧自行車道，隧道壁面彩繪夜光十二星座與蓄光石，出隧道即見壯闊的台灣海峽與防波堤浪花。",
+        "images": [
+            "assets/img/cijin_fort_1.jpg",
+            "assets/img/cijin_fort_2.jpg",
+            "assets/img/cijin_temple.jpg",
+            "assets/img/cijin_tunnel_1.jpg",
+            "assets/img/cijin_tunnel_2.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "高雄旅遊網｜旗津老街與星空隧道巡禮",
+                "url": "https://khh.travel/zh-tw/attractions/detail/207"
+            },
+            {
+                "title": "文化部文化資產局｜國定古蹟旗後砲台",
+                "url": "https://nchdb.boch.gov.tw/assets/overview/monument/19850819000004"
+            },
+            {
+                "title": "高雄市旗津天后宮官方簡介",
+                "url": "https://www.chijin-temple.org.tw/"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【旗津深度漫遊】星空隧道、旗後砲台俯瞰大高雄港",
+                "url": "https://www.youtube.com/results?search_query=旗津+星空隧道+旗後砲台"
+            },
+            {
+                "title": "【威震天南歷史古蹟】旗後砲台建築美學與海防歷史",
+                "url": "https://www.youtube.com/results?search_query=旗後砲台+介紹"
+            },
+            {
+                "title": "【旗津老街美食巡禮】走訪百年媽祖天后宮",
+                "url": "https://www.youtube.com/results?search_query=旗津老街+天后宮"
+            }
+        ]
     },
     {
-      id: "chimei-museum",
-      name: "奇美博物館",
-      tag: "Day 3 文藝瑰寶",
-      subtitle: "實業家許文龍先生畢生心血・共享大眾的西洋美學聖殿",
-      desc: "奇美博物館始於1992年，由奇美實業創辦人許文龍先生捐資興建。許創辦人幼年受到博物館薰陶，立志創建一座『屬於大眾共享共賞的博物館』，秉持『這些文物是世界文化的珍寶，我們只是暫時的保管者，未來還要代代相傳下去』之宏願。\n園區外圍座落著阿波羅噴泉廣場、奧林帕斯神像橋；館內常設展涵蓋西洋繪畫雕塑、全球動物標本自然史、名琴樂器收藏與古代兵器兵工藝，宏偉的希臘羅馬古典廊柱讓人彷彿置身歐洲藝術殿堂。",
-      images: [
-        "assets/img/chimei_1.jpg",
-        "assets/img/chimei_2.jpg",
-        "assets/img/chimei_3.jpg"
-      ]
+        "id": "chimei-museum",
+        "name": "奇美博物館",
+        "tag": "Day 3 文藝瑰寶",
+        "subtitle": "實業家許文龍先生畢生心血・共享大眾的西洋美學聖殿",
+        "googleMapUrl": "https://maps.google.com/?q=奇美博物館",
+        "desc": "奇美博物館始於1992年，由奇美實業創辦人許文龍先生捐資興建。許創辦人幼年受到博物館薰陶，立志創建一座『屬於大眾共享共賞的博物館』，秉持『這些文物是世界文化的珍寶，我們只是暫時的保管者，未來還要代代相傳下去』之宏願。\n園區外圍座落著阿波羅噴泉廣場、奧林帕斯神像橋；館內常設展涵蓋西洋繪畫雕塑、全球動物標本自然史、名琴樂器收藏與古代兵器兵工藝，宏偉的希臘羅馬古典廊柱讓人彷彿置身歐洲藝術殿堂。",
+        "images": [
+            "assets/img/chimei_1.jpg",
+            "assets/img/chimei_2.jpg",
+            "assets/img/chimei_3.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "奇美博物館官方網站",
+                "url": "https://www.chimeimuseum.org/"
+            },
+            {
+                "title": "台南旅遊網｜奇美博物館西洋美學殿堂",
+                "url": "https://www.twtainan.net/zh-tw/attractions/detail/761"
+            },
+            {
+                "title": "交通部觀光署｜奇美博物館常設展導覽",
+                "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0001119&id=A12-00213"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【奇美博物館全展區開箱】阿波羅噴泉與歐洲古典名畫",
+                "url": "https://www.youtube.com/results?search_query=奇美博物館+完整導覽"
+            },
+            {
+                "title": "【許文龍創辦理念】大眾共享的世界文化寶藏",
+                "url": "https://www.youtube.com/results?search_query=許文龍+奇美博物館+理念"
+            },
+            {
+                "title": "【走進歐洲童話殿堂】奧林帕斯橋與阿波羅水舞實拍",
+                "url": "https://www.youtube.com/results?search_query=奇美博物館+阿波羅噴泉+水舞"
+            }
+        ]
+    },
+    {
+        "id": "mingjian-park",
+        "name": "名間親子生態園區",
+        "tag": "Day 3 家鄉新亮點",
+        "subtitle": "南投最大 2.6 公頃全齡共融遊戲場・5米巨型彩虹溜滑梯",
+        "googleMapUrl": "https://maps.google.com/?q=名間親子生態園區",
+        "desc": "名間親子生態園區位於南投縣名間鄉（鄰近國道三號名間交流道），佔地約 2.6 公頃，為南投縣最具規模之大型全齡共融特色戶外生態公園！\n園區核心地標為高達 5 公尺的巨型彩虹磨石子溜滑梯，設有兩道長達 15 公尺的高速滑道與安全緩衝人工草皮；周邊規劃了草皮攀爬坡、天空環狀景觀步道、360度複合攀爬網、巨型白細沙坑、鳥巢鞦韆與彈跳床。園區廣植落羽松、肖楠、五葉松與景觀生態池，是三天畢旅尾聲讓全體師生盡情舒展身心、拍攝團體歡樂大合影的最佳景點！",
+        "images": [
+            "assets/img/mingjian_1.jpg",
+            "assets/img/mingjian_2.jpg",
+            "assets/img/mingjian_3.jpg"
+        ],
+        "webLinks": [
+            {
+                "title": "南投旅遊網｜名間親子生態園區官方介紹",
+                "url": "https://travel.nantou.gov.tw/spot/%E5%90%8D%E9%96%93%E8%A6%AA%E5%AD%90%E7%94%9F%E6%85%8B%E5%9C%92%E5%8D%80/"
+            },
+            {
+                "title": "南投縣政府最新消息｜名間全齡共融樂園",
+                "url": "https://www.nantou.gov.tw/"
+            },
+            {
+                "title": "玩全台灣旅遊網｜名間親子生態園區亮點設施",
+                "url": "https://okgo.tw/"
+            }
+        ],
+        "videoLinks": [
+            {
+                "title": "【名間親子生態園區完整導覽】南投最新2.6公頃放電樂園",
+                "url": "https://www.youtube.com/results?search_query=名間親子生態園區+導覽"
+            },
+            {
+                "title": "【5米巨無霸彩虹滑梯】兩道15公尺磨石子極速體驗",
+                "url": "https://www.youtube.com/results?search_query=名間親子生態園區+彩虹溜滑梯"
+            },
+            {
+                "title": "【天空環狀步道與攀爬設施】南投全齡共融遊具大公開",
+                "url": "https://www.youtube.com/results?search_query=名間親子生態園區+遊具"
+            }
+        ]
     }
-  ],
+],
 
   quiz: {
     trueFalse: [

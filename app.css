@@ -1284,3 +1284,117 @@ body {
     height: 200px;
   }
 }
+
+/* 頂部導航之去個資簡報高亮按鈕 */
+.nav-link-highlight {
+  background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+  color: #ffffff !important;
+  border-radius: 999px;
+  padding: 6px 14px !important;
+  margin: 6px 8px 6px 0;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+  font-weight: 700 !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+.nav-link-highlight:hover {
+  background: linear-gradient(135deg, #0369a1, #0284c7) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.4);
+}
+
+.mobile-link-highlight {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+}
+
+/* 景點卡片地圖與外連按鈕群 */
+.attraction-meta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.attract-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 5px rgba(2, 132, 199, 0.2);
+}
+.attract-map-btn:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+}
+
+.attraction-resources {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resource-group-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.resource-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resource-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: 1px solid var(--border);
+}
+
+.resource-chip.web {
+  background: #f0f9ff;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+.resource-chip.web:hover {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+}
+
+.resource-chip.video {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+.resource-chip.video:hover {
+  background: #fee2e2;
+  border-color: #f87171;
+}

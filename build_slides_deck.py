@@ -85,6 +85,62 @@ html_template = """<!DOCTYPE html>
     border-radius: 8px;
     border: 1px solid var(--cf-rule);
   }
+
+  .deck-res-box {
+    margin-top: 8px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid var(--cf-rule);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .deck-res-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+  .deck-res-row:last-child {
+    margin-bottom: 0;
+  }
+  .deck-res-label {
+    font-weight: 700;
+    color: var(--cf-text);
+    min-width: 44px;
+  }
+  .deck-res-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 11px;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.15s ease;
+  }
+  .deck-res-chip.map {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.35);
+  }
+  .deck-res-chip.web {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+  .deck-res-chip.video {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.35);
+  }
+  .deck-res-chip:hover {
+    filter: brightness(1.25);
+    transform: translateY(-1px);
+  }
 </style>
 </head>
 <body class="deck" data-mode="present">
@@ -92,6 +148,7 @@ html_template = """<!DOCTYPE html>
   <span class="deck-id">南投國中 115 畢旅</span>
   <span class="deck-name">畢業旅行行動簡報手冊（去個資版）</span>
   <div class="deck-tools">
+    <a href="app.html" class="deck-btn" style="text-decoration:none; color:var(--cf-accent); border-color:rgba(56,189,248,0.4); margin-right:4px;">📱 手冊網頁版</a>
     <button class="deck-btn" id="toc-btn" type="button">目錄總覽</button>
     <button class="deck-btn is-on" id="mode-btn" type="button">閱讀模式</button>
     <button class="deck-btn" id="fs-btn" type="button">全螢幕</button>
@@ -120,7 +177,7 @@ html_template = """<!DOCTYPE html>
           <ul class="s-list">
             <li><b>Day 1（10/21 三）</b>：學校集合 ➔ 田寮月世界 ➔ 國立海洋生物博物館 ➔ 貓鼻頭風景區 ➔ 墾丁福華渡假大飯店 ➔ 墾丁大街夜巡</li>
             <li><b>Day 2（10/22 四）</b>：晨喚早餐 ➔ 飯店沙灘趣味競賽 (淨灘踏浪) ➔ 前往高雄 ➔ 義大遊樂世界 (特洛伊城) ➔ 義大世界購物廣場 ＆ 摩天輪 ➔ 高雄義大天悅飯店</li>
-            <li><b>Day 3（10/23 五）</b>：旗津海岸公園 ＆ 星空隧道 ＆ 旗後砲台 ➔ 港都午餐 ➔ 奇美博物館 ➔ 921地震公園暨會展中心 ➔ 快樂賦歸南投國中</li>
+            <li><b>Day 3（10/23 五）</b>：旗津海岸公園 ＆ 星空隧道 ＆ 旗後砲台 ➔ 港都午餐 ➔ 奇美博物館 ➔ 名間親子生態園區 ➔ 快樂賦歸南投國中</li>
           </ul>
         </div>
         <div>
@@ -224,7 +281,7 @@ html_template = """<!DOCTYPE html>
               <tr><td>08:20~11:00</td><td><strong>旗津風景區采風巡禮</strong>：星空隧道、旗後砲台、天后宮、旗津老街</td></tr>
               <tr><td>11:30~12:30</td><td>港都海味午餐（合菜）</td></tr>
               <tr><td>13:30~16:00</td><td><strong>奇美博物館</strong>：西洋美學雕塑、動物自然史、名琴樂器與阿波羅噴泉廣場</td></tr>
-              <tr><td>16:30~17:30</td><td><strong>921地震公園暨南投國際會展中心</strong>：大合影紀念</td></tr>
+              <tr><td>16:30~17:30</td><td><strong>名間親子生態園區</strong>：5米彩虹溜滑梯、全齡共融遊具、大合影紀念</td></tr>
               <tr><td>17:30~18:00</td><td><strong>快樂賦歸！</strong>平安返抵南投國中，互道珍重回可愛的家！</td></tr>
             </tbody>
           </table>
@@ -587,81 +644,172 @@ html_template = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Slide 17: 景點解說 1 -->
+    <!-- Slide 17: 景點解說 1 -->
   <section class="slide" id="slide-attract1">
-    <p class="s-eyebrow">ATTRACTIONS · 地質與民謠</p>
+    <p class="s-eyebrow">ATTRACTIONS · Day 1 地質與民謠</p>
     <h2 class="s-title">田寮月世界 ＆ 恆春民謠《思想起》</h2>
     <div class="s-body">
       <div class="cols c2">
         <div>
           <div class="card-slide" style="margin-bottom:10px;">
             <h4>🌔 田寮月世界（惡地地質）</h4>
-            <div style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
-              在地理學上稱為『惡地』，因青灰色泥岩質地軟弱且含鹽，受雨水長年侵蝕沖刷，泥岩吸水順坡流瀉，形成寸草不生的荒涼光禿鋸齒狀山脊。登上民國70年所建的『攬月樓』，可俯瞰如月球表面般的蒼茫壯觀景色。
+            <div style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+              在地理學上稱為『惡地』，因青灰色泥岩質地軟弱且含鹽，受雨水長年侵蝕沖刷，形成寸草不生的荒涼光禿鋸齒狀山脊。登上『攬月樓』可俯瞰如月球表面般的蒼茫壯觀景色。
+            </div>
+            <div class="deck-res-box">
+              <div class="deck-res-row">
+                <span class="deck-res-label">📍 地圖:</span>
+                <a href="https://maps.google.com/?q=田寮月世界地質公園" target="_blank" class="deck-res-chip map">🗺️ Google Map 導航</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🌐 網頁:</span>
+                <a href="https://khh.travel/zh-tw/attractions/detail/205" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
+                <a href="https://www.maolin-nsa.gov.tw/04000302.html" target="_blank" class="deck-res-chip web">茂林國家風景區</a>
+                <a href="https://okgo.tw/butyview.html?id=230" target="_blank" class="deck-res-chip web">玩全台灣步道</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🎬 影片:</span>
+                <a href="https://www.youtube.com/results?search_query=田寮月世界+空拍" target="_blank" class="deck-res-chip video">空拍全貌</a>
+                <a href="https://www.youtube.com/results?search_query=田寮月世界+步道導覽" target="_blank" class="deck-res-chip video">嫦娥奔月步道</a>
+                <a href="https://www.youtube.com/results?search_query=田寮月世界+地質形成" target="_blank" class="deck-res-chip video">泥岩成因</a>
+              </div>
             </div>
           </div>
           <div class="card-slide">
             <h4>🪕 恆春傳統民謠《思想起》</h4>
-            <div style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
-              恆春最具代表性國寶級傳統民謠，月琴悠揚傳唱先民橫渡黑水溝拓墾之艱辛心境：「思想起，祖先鹹心過台灣，不知台灣生做啥款？思想起，海水絕深反成黑，在海山浮心漂心艱苦...碰到颱風攪大浪，心想那神明...」。
+            <div style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+              恆春代表性國寶級傳統民謠，月琴悠揚傳唱先民橫渡黑水溝拓墾之艱辛心境：「思想起，祖先鹹心過台灣，不知台灣生做啥款？思想起，海水絕深反成黑...」。
+            </div>
+            <div class="deck-res-box">
+              <div class="deck-res-row">
+                <span class="deck-res-label">📍 地圖:</span>
+                <a href="https://maps.google.com/?q=恆春民謠館" target="_blank" class="deck-res-chip map">🗺️ 恆春民謠館</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🌐 網頁:</span>
+                <a href="https://nrch.culture.tw/twpedia.aspx?id=10928" target="_blank" class="deck-res-chip web">文化部大百科</a>
+                <a href="https://www.cultural.pthg.gov.tw/" target="_blank" class="deck-res-chip web">屏東縣文化處</a>
+                <a href="https://music.ncfta.gov.tw/" target="_blank" class="deck-res-chip web">臺灣音樂館</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🎬 影片:</span>
+                <a href="https://www.youtube.com/results?search_query=陳達+思想起+月琴" target="_blank" class="deck-res-chip video">陳達原聲傳唱</a>
+                <a href="https://www.youtube.com/results?search_query=恆春民謠+思想起+紀錄片" target="_blank" class="deck-res-chip video">半島之歌紀錄片</a>
+                <a href="https://www.youtube.com/results?search_query=恆春半島+思想起+文化傳承" target="_blank" class="deck-res-chip video">月琴傳習故事</a>
+              </div>
             </div>
           </div>
         </div>
         <div>
           <img class="img-slide" src="assets/img/moon_world_1.jpg" alt="田寮月世界">
+          <img class="img-slide" style="margin-top:10px; height:150px;" src="assets/img/moon_world_2.jpg" alt="惡地景觀">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Slide 18: 景點解說 2 (海生館) -->
+  <!-- Slide 18: 景點解說 2 (海生館與貓鼻頭) -->
   <section class="slide" id="slide-attract2">
-    <p class="s-eyebrow">ATTRACTIONS · 國境之南生態</p>
-    <h2 class="s-title">國立海洋生物博物館（館魚：燕魚）</h2>
+    <p class="s-eyebrow">ATTRACTIONS · Day 1 國境之南海生館與貓鼻頭</p>
+    <h2 class="s-title">國立海洋生物博物館 ＆ 貓鼻頭風景區</h2>
     <div class="s-body">
-      <div class="grid-deck-3">
+      <div class="cols c2">
         <div class="card-slide">
-          <h4>🏞️ 台灣水域館</h4>
-          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
-            以「高山到海洋小水滴的旅行」為主題，從谷關龍谷瀑布、高山溪流（櫻花鉤吻鮭、苦花）、水庫、河口牡蠣養殖，一路延伸到浩瀚壯觀的大洋池（仿東部太平洋生態）。
+          <h4>🐟 國立海洋生物博物館（館魚：燕魚）</h4>
+          <p style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+            <strong>台灣水域館</strong>：從小水滴旅行到壯闊大洋池。<br>
+            <strong>珊瑚王國館</strong>：84公尺海底隧道與海中金絲雀小白鯨。<br>
+            <strong>世界水域館</strong>：3D無水虛擬實境、巨藻森林與極地企鵝。
           </p>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=國立海洋生物博物館" target="_blank" class="deck-res-chip map">🗺️ 海生館導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 網頁:</span>
+              <a href="https://www.nmmba.gov.tw/" target="_blank" class="deck-res-chip web">海生館官網</a>
+              <a href="https://www.dbnsa.gov.tw/Attractions-Content.aspx?lang=1&sno=04000188" target="_blank" class="deck-res-chip web">大鵬灣風景區</a>
+              <a href="https://i-pingtung.com/" target="_blank" class="deck-res-chip web">屏東旅遊網</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=國立海洋生物博物館+完整導覽" target="_blank" class="deck-res-chip video">三大館開箱</a>
+              <a href="https://www.youtube.com/results?search_query=海生館+小白鯨+海底隧道" target="_blank" class="deck-res-chip video">小白鯨特寫</a>
+              <a href="https://www.youtube.com/results?search_query=海生館+企鵝餵食+巨藻森林" target="_blank" class="deck-res-chip video">企鵝與巨藻森林</a>
+            </div>
+          </div>
         </div>
         <div class="card-slide">
-          <h4>🪸 珊瑚王國館</h4>
-          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
-            呈現活珊瑚礁頂與垂直礁壁，擁有 <strong>84 公尺長</strong>夢幻海底隧道，並能近距離觀察白鯨（海中金絲雀）優雅在水中穿梭。
+          <h4>🌊 貓鼻頭風景區（裙礁崩崖海岸）</h4>
+          <p style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+            位於恆春半島西南端，為台灣海峽與巴士海峽的天然分界指標。受強烈海蝕侵蝕，形成崩崖、壺穴、礁柱等典型隆起珊瑚礁裙礁地形，波瀾壯闊。
           </p>
-        </div>
-        <div class="card-slide">
-          <h4>🌍 世界水域館</h4>
-          <p style="font-size:12.5px; line-height:1.6; color:var(--cf-text-dim);">
-            全球首創 3D 虛擬無水水族館，展示古代海洋演化、高聳海藻森林、深海生物與極地水域超人氣企鵝家族。
-          </p>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=貓鼻頭風景區" target="_blank" class="deck-res-chip map">🗺️ 貓鼻頭導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 網頁:</span>
+              <a href="https://www.ktnp.gov.tw/News_Content.aspx?n=855&s=2541" target="_blank" class="deck-res-chip web">墾管處導覽</a>
+              <a href="https://www.taiwan.net.tw/m1.aspx?sNo=0001121&id=2555" target="_blank" class="deck-res-chip web">交通部觀光署</a>
+              <a href="https://okgo.tw/butyview.html?id=250" target="_blank" class="deck-res-chip web">玩全台灣裙礁</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=貓鼻頭+空拍+海蝕地形" target="_blank" class="deck-res-chip video">雙海交界空拍</a>
+              <a href="https://www.youtube.com/results?search_query=貓鼻頭+地質解說" target="_blank" class="deck-res-chip video">地質壺穴礁柱</a>
+              <a href="https://www.youtube.com/results?search_query=貓鼻頭風景區+導覽" target="_blank" class="deck-res-chip video">落日海風步道</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-        <img class="img-slide" style="height:140px;" src="assets/img/nmmba_coral.png" alt="珊瑚王國">
-        <img class="img-slide" style="height:140px;" src="assets/img/nmmba_world.jpg" alt="世界水域">
+      <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <img class="img-slide" style="height:140px;" src="assets/img/nmmba_cover_1.jpg" alt="海生館">
+        <img class="img-slide" style="height:140px;" src="assets/img/maobitou_1.jpg" alt="貓鼻頭">
       </div>
     </div>
   </section>
 
   <!-- Slide 19: 景點解說 3 (義大) -->
   <section class="slide" id="slide-attract3">
-    <p class="s-eyebrow">ATTRACTIONS · 冒險與休閒</p>
+    <p class="s-eyebrow">ATTRACTIONS · Day 2 冒險與休閒</p>
     <h2 class="s-title">義大遊樂世界 ＆ 購物廣場摩天輪</h2>
     <div class="s-body">
       <div class="cols c2">
         <div>
-          <ul class="s-list">
-            <li><strong>希臘情境主題園區</strong>：全台唯一希臘主題，擁有衛城、藍白聖托里尼山城、特洛伊城三大區域。</li>
-            <li><strong>特洛伊城</strong>：15000 坪全台最大室內主題館，包含重現歷史之巨大木馬、地心歷險暗室雲霄飛車、飛越台灣模擬飛行。</li>
-            <li><strong>名品 Outlet 購物廣場</strong>：全台首創大型品牌 Outlet，擁有羅馬天幕造景與豐富美食街。</li>
-            <li><strong>海拔 215 米巨型摩天輪</strong>：直徑 80 公尺，南台灣最高景觀摩天輪，128 種炫彩燈光秀俯瞰高屏百萬夜景。</li>
-          </ul>
+          <div class="card-slide">
+            <h4>🎢 義大遊樂世界 ＆ 巨型摩天輪</h4>
+            <ul class="s-list" style="font-size:12.5px;">
+              <li><strong>希臘情境園區</strong>：衛城、藍白聖托里尼山城、特洛伊城三大分區。</li>
+              <li><strong>特洛伊城</strong>：15000坪全台最大室內主題館，包含巨大木馬、地心歷險暗室雲霄飛車、飛越台灣模擬飛行。</li>
+              <li><strong>海拔215米摩天輪</strong>：直徑80公尺，南台灣最高景觀摩天輪，128種炫彩燈光秀俯瞰百萬夜景。</li>
+            </ul>
+            <div class="deck-res-box">
+              <div class="deck-res-row">
+                <span class="deck-res-label">📍 地圖:</span>
+                <a href="https://maps.google.com/?q=義大遊樂世界" target="_blank" class="deck-res-chip map">🗺️ 義大遊樂世界</a>
+                <a href="https://maps.google.com/?q=義大世界購物廣場" target="_blank" class="deck-res-chip map">🗺️ 義大購物廣場</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🌐 網頁:</span>
+                <a href="http://www.edathemepark.com.tw/" target="_blank" class="deck-res-chip web">義大遊樂世界官網</a>
+                <a href="http://www.edamall.com.tw/" target="_blank" class="deck-res-chip web">義大購物官網</a>
+                <a href="https://khh.travel/zh-tw/attractions/detail/206" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🎬 影片:</span>
+                <a href="https://www.youtube.com/results?search_query=義大遊樂世界+特洛伊城堡+攻略" target="_blank" class="deck-res-chip video">特洛伊城堡實測</a>
+                <a href="https://www.youtube.com/results?search_query=義大+天旋地轉+實拍" target="_blank" class="deck-res-chip video">高空尖叫極限</a>
+                <a href="https://www.youtube.com/results?search_query=義大摩天輪+夜景" target="_blank" class="deck-res-chip video">摩天輪夜景實拍</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <img class="img-slide" src="assets/img/eda_trojan_1.jpg" alt="特洛伊城木馬">
+          <img class="img-slide" style="margin-top:10px; height:150px;" src="assets/img/eda_ferris_wheel.jpg" alt="義大摩天輪">
         </div>
       </div>
     </div>
@@ -669,28 +817,110 @@ html_template = """<!DOCTYPE html>
 
   <!-- Slide 20: 景點解說 4 (旗津與奇美) -->
   <section class="slide" id="slide-attract4">
-    <p class="s-eyebrow">ATTRACTIONS · 史蹟與美學</p>
+    <p class="s-eyebrow">ATTRACTIONS · Day 3 史蹟與美學</p>
     <h2 class="s-title">旗津風景區 ＆ 奇美博物館</h2>
     <div class="s-body">
       <div class="cols c2">
         <div class="card-slide">
           <h4>⚓ 旗津史蹟（旗後砲台・星空隧道）</h4>
-          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
-            • <strong>旗後砲台</strong>：清代海防要塞，營門上方題有「威震天南」，磚砌八卦牆極具傳統美學。<br>
-            • <strong>星空隧道</strong>：貫穿旗後山之軍事通道改造，隧道內彩繪十二星座夜光壁畫，出口即臨壯闊台灣海峽。<br>
-            • <strong>旗津天后宮</strong>：建於 1673 年，為高雄市最古老媽祖廟。
+          <p style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+            • <strong>旗後砲台</strong>：清代海防要塞，營門上方題有「威震天南」。<br>
+            • <strong>星空隧道</strong>：原軍事隧道改造，壁面彩繪十二星座夜光，出洞即臨大海。<br>
+            • <strong>旗津天后宮</strong>：建於1673年，高雄市最古老媽祖廟。
           </p>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=旗津星空隧道" target="_blank" class="deck-res-chip map">🗺️ 旗津星空隧道</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 網頁:</span>
+              <a href="https://khh.travel/zh-tw/attractions/detail/207" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
+              <a href="https://nchdb.boch.gov.tw/assets/overview/monument/19850819000004" target="_blank" class="deck-res-chip web">國定古蹟砲台</a>
+              <a href="https://www.chijin-temple.org.tw/" target="_blank" class="deck-res-chip web">天后宮簡介</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=旗津+星空隧道+旗後砲台" target="_blank" class="deck-res-chip video">旗津深度漫遊</a>
+              <a href="https://www.youtube.com/results?search_query=旗後砲台+介紹" target="_blank" class="deck-res-chip video">砲台建築美學</a>
+              <a href="https://www.youtube.com/results?search_query=旗津老街+天后宮" target="_blank" class="deck-res-chip video">老街美食巡禮</a>
+            </div>
+          </div>
         </div>
         <div class="card-slide">
           <h4>🏛️ 奇美博物館（許文龍創辦）</h4>
-          <p style="font-size:13px; line-height:1.6; color:var(--cf-text-dim);">
-            由奇美實業創辦人許文龍先生捐資興建，秉持「共享給大眾的博物館」理念。館內典藏西洋繪畫雕塑、全球動物標本自然史、名琴樂器與古代兵器；戶外設有阿波羅噴泉與奧林帕斯神像橋。
+          <p style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+            實業家許文龍先生捐資興建，秉持「屬於大眾共享的博物館」理念。館內典藏西洋繪畫雕塑、全球動物自然史、名琴樂器與古代兵器；戶外設有阿波羅噴泉與奧林帕斯神像橋。
           </p>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=奇美博物館" target="_blank" class="deck-res-chip map">🗺️ 奇美博物館導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 網頁:</span>
+              <a href="https://www.chimeimuseum.org/" target="_blank" class="deck-res-chip web">奇美博物館官網</a>
+              <a href="https://www.twtainan.net/zh-tw/attractions/detail/761" target="_blank" class="deck-res-chip web">台南旅遊網</a>
+              <a href="https://www.taiwan.net.tw/m1.aspx?sNo=0001119&id=A12-00213" target="_blank" class="deck-res-chip web">交通部觀光署</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=奇美博物館+完整導覽" target="_blank" class="deck-res-chip video">全展區開箱</a>
+              <a href="https://www.youtube.com/results?search_query=許文龍+奇美博物館+理念" target="_blank" class="deck-res-chip video">創辦理念訪談</a>
+              <a href="https://www.youtube.com/results?search_query=奇美博物館+阿波羅噴泉+水舞" target="_blank" class="deck-res-chip video">阿波羅水舞實拍</a>
+            </div>
+          </div>
         </div>
       </div>
       <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <img class="img-slide" style="height:140px;" src="assets/img/cijin_fort_1.jpg" alt="旗後砲台">
         <img class="img-slide" style="height:140px;" src="assets/img/chimei_1.jpg" alt="奇美博物館">
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 21: 景點解說 5 (名間親子生態園區 - 新增景點) -->
+  <section class="slide" id="slide-attract5">
+    <p class="s-eyebrow">ATTRACTIONS · Day 3 家鄉新亮點</p>
+    <h2 class="s-title">名間親子生態園區（南投最大 2.6 公頃全齡共融樂園）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div>
+          <div class="card-slide">
+            <h4>🌈 園區特色與人氣亮點設施</h4>
+            <div style="font-size:12.5px; line-height:1.55; color:var(--cf-text-dim);">
+              位於南投縣名間鄉，鄰近國道三號名間交流道，佔地約 2.6 公頃：<br>
+              • <strong>5米巨型彩虹磨石子溜滑梯</strong>：兩道長達15公尺高速滑道與安全人工草皮緩衝區。<br>
+              • <strong>全齡共融遊具</strong>：草皮攀爬坡、天空環狀步道、360度複合攀爬網、巨型白沙坑與彈跳床。<br>
+              • <strong>生態景觀步道</strong>：種植落羽松、肖楠、五葉松與生態池，是三天畢旅尾聲師生漫步舒展與<strong>團體歡樂大合影</strong>的最佳地點！
+            </div>
+            <div class="deck-res-box">
+              <div class="deck-res-row">
+                <span class="deck-res-label">📍 地圖:</span>
+                <a href="https://maps.google.com/?q=名間親子生態園區" target="_blank" class="deck-res-chip map">🗺️ 名間親子生態園區 Google Map</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🌐 網頁:</span>
+                <a href="https://travel.nantou.gov.tw/spot/%E5%90%8D%E9%96%93%E8%A6%AA%E5%AD%90%E7%94%9F%E6%85%8B%E5%9C%92%E5%8D%80/" target="_blank" class="deck-res-chip web">南投旅遊網介紹</a>
+                <a href="https://www.nantou.gov.tw/" target="_blank" class="deck-res-chip web">南投縣政府最新消息</a>
+                <a href="https://okgo.tw/" target="_blank" class="deck-res-chip web">玩全台灣亮點設施</a>
+              </div>
+              <div class="deck-res-row">
+                <span class="deck-res-label">🎬 影片:</span>
+                <a href="https://www.youtube.com/results?search_query=名間親子生態園區+導覽" target="_blank" class="deck-res-chip video">2.6公頃放電樂園導覽</a>
+                <a href="https://www.youtube.com/results?search_query=名間親子生態園區+彩虹溜滑梯" target="_blank" class="deck-res-chip video">5米彩虹滑梯極速實測</a>
+                <a href="https://www.youtube.com/results?search_query=名間親子生態園區+遊具" target="_blank" class="deck-res-chip video">天空步道與攀爬設施</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img class="img-slide" src="assets/img/mingjian_1.jpg" alt="名間親子生態園區彩虹溜滑梯">
+          <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <img class="img-slide" style="height:140px;" src="assets/img/mingjian_2.jpg" alt="名間親子生態園區全齡遊具">
+            <img class="img-slide" style="height:140px;" src="assets/img/mingjian_3.jpg" alt="名間親子生態園區大草坪">
+          </div>
+        </div>
       </div>
     </div>
   </section>

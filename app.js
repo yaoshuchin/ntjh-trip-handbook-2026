@@ -465,10 +465,48 @@ document.addEventListener("DOMContentLoaded", () => {
           `).join("")}
         </div>
         <div class="attraction-body">
-          <span class="attraction-tag">${item.tag}</span>
-          <h3 class="attraction-title">${item.name}</h3>
-          <div class="attraction-subtitle">${item.subtitle}</div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
+            <div>
+              <span class="attraction-tag">${item.tag}</span>
+              <h3 class="attraction-title">${item.name}</h3>
+              <div class="attraction-subtitle">${item.subtitle}</div>
+            </div>
+            ${item.googleMapUrl ? `
+              <a href="${item.googleMapUrl}" target="_blank" rel="noopener noreferrer" class="attract-map-btn">
+                🗺️ Google 地圖導航
+              </a>
+            ` : ''}
+          </div>
           <div class="attraction-desc">${item.desc}</div>
+
+          <!-- 景點外連資源：3篇推薦網頁與3部影片 -->
+          <div class="attraction-resources">
+            ${item.webLinks && item.webLinks.length ? `
+              <div>
+                <div class="resource-group-title">📖 推薦網頁介紹：</div>
+                <div class="resource-chips-grid">
+                  ${item.webLinks.map(l => `
+                    <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="resource-chip web">
+                      🌐 ${l.title}
+                    </a>
+                  `).join("")}
+                </div>
+              </div>
+            ` : ''}
+
+            ${item.videoLinks && item.videoLinks.length ? `
+              <div>
+                <div class="resource-group-title">🎬 相關推薦影片：</div>
+                <div class="resource-chips-grid">
+                  ${item.videoLinks.map(v => `
+                    <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="resource-chip video">
+                      ▶️ ${v.title}
+                    </a>
+                  `).join("")}
+                </div>
+              </div>
+            ` : ''}
+          </div>
         </div>
       </div>
     `).join("");
