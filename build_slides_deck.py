@@ -7,10 +7,13 @@ html_template = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>南投國中 115學年度畢業旅行 行動簡報手冊（去個資版）</title>
 <meta name="description" content="南投縣立南投國民中學 115學年度畢業旅行 簡報式行動手冊，提供投影片全螢幕簡報模式與捲動閱讀模式，支援快速查詢行程、去個資房號車次、景點與生活須知。">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="deck.css?v=202610182325">
 <style>
   /* 投中畢旅專屬風格微調 */
   :root {
@@ -826,10 +829,13 @@ html_template = """<!DOCTYPE html>
         </div>
         <div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-            <img class="img-slide" style="height:140px;" src="assets/img/howard_1.jpg" alt="墾丁福華飯店外觀">
-            <img class="img-slide" style="height:140px;" src="assets/img/howard_2.jpg" alt="墾丁福華大廳休閒園區">
+            <img class="img-slide" style="height:135px;" src="assets/img/howard_1.jpg" alt="墾丁福華飯店外觀">
+            <img class="img-slide" style="height:135px;" src="assets/img/howard_2.jpg" alt="墾丁福華大廳休閒園區">
           </div>
-          <img class="img-slide" style="margin-top:8px; height:125px; width:100%; object-fit:cover;" src="assets/img/howard_3.jpg" alt="墾丁福華渡假飯店遠景">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+            <img class="img-slide" style="height:120px;" src="assets/img/howard_3.jpg" alt="墾丁福華渡假飯店遠景">
+            <img class="img-slide" style="height:120px;" src="assets/img/howard_4.jpg" alt="墾丁福華客房與渡假園景">
+          </div>
         </div>
       </div>
     </div>
@@ -910,10 +916,13 @@ html_template = """<!DOCTYPE html>
         </div>
         <div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-            <img class="img-slide" style="height:140px;" src="assets/img/skylark_1.jpg" alt="天悅飯店與摩天輪景觀">
-            <img class="img-slide" style="height:140px;" src="assets/img/skylark_2.jpg" alt="天悅飯店噴泉水景">
+            <img class="img-slide" style="height:135px;" src="assets/img/skylark_1.jpg" alt="天悅飯店與摩天輪景觀">
+            <img class="img-slide" style="height:135px;" src="assets/img/skylark_2.jpg" alt="天悅飯店噴泉水景">
           </div>
-          <img class="img-slide" style="margin-top:8px; height:125px; width:100%; object-fit:cover;" src="assets/img/skylark_3.jpg" alt="天悅飯店迎賓大廳門面夜景">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+            <img class="img-slide" style="height:120px;" src="assets/img/skylark_3.jpg" alt="天悅飯店迎賓大廳門面夜景">
+            <img class="img-slide" style="height:120px;" src="assets/img/skylark_4.jpg" alt="天悅飯店全景遠眺">
+          </div>
         </div>
       </div>
     </div>
@@ -1237,7 +1246,7 @@ html_template = """<!DOCTYPE html>
 
 </main>
 
-<script src="lesson-deck.js"></script>
+<script src="lesson-deck.js?v=202610182325"></script>
 </body>
 </html>
 """

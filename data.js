@@ -535,7 +535,8 @@ const TRIP_DATA = {
     "images": [
       "assets/img/howard_1.jpg",
       "assets/img/howard_2.jpg",
-      "assets/img/howard_3.jpg"
+      "assets/img/howard_3.jpg",
+      "assets/img/howard_4.jpg"
     ],
     "webLinks": [
       {
@@ -634,7 +635,8 @@ const TRIP_DATA = {
     "images": [
       "assets/img/skylark_1.jpg",
       "assets/img/skylark_2.jpg",
-      "assets/img/skylark_3.jpg"
+      "assets/img/skylark_3.jpg",
+      "assets/img/skylark_4.jpg"
     ],
     "webLinks": [
       {
@@ -1020,6 +1022,9 @@ const TRIP_DATA = {
   ]
 };
 
+if (typeof window !== 'undefined') {
+  window.TRIP_DATA = TRIP_DATA;
+}
 // 匯出供 script.js 使用
 if (typeof module !== 'undefined') {
   module.exports = TRIP_DATA;

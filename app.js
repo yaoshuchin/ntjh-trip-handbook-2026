@@ -61,6 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    window.switchTabTo = switchTab;
+
+    window.jumpToAttract = function(aid) {
+      switchTab('attractions');
+      setTimeout(() => {
+        const el = document.getElementById(aid);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 250);
+    };
+
     desktopBtns.forEach(btn => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
@@ -68,6 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileBtns.forEach(btn => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
+
+    // 檢查網址 hash 是否有指定分頁或景點
+    const hash = window.location.hash.replace("#", "");
+    if (hash === "attractions" || hash.startsWith("attract-")) {
+      switchTab("attractions");
+      if (hash.startsWith("attract-")) {
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
   }
 
   /* ==========================================================================
@@ -104,6 +126,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("itinerary-content-container");
     if (!daySelector || !container) return;
 
+    function getAttractId(text) {
+      if (!text) return null;
+      if (text.includes("月世界")) return "attract-moon-world";
+      if (text.includes("海生館") || text.includes("海洋生物")) return "attract-nmmba";
+      if (text.includes("貓鼻頭")) return "attract-maobitou";
+      if (text.includes("墾丁大街")) return "attract-kenting-street";
+      if (text.includes("墾丁福華")) return "attract-kenting-howard";
+      if (text.includes("義大遊樂") || text.includes("特洛伊")) return "attract-eda-theme-park";
+      if (text.includes("摩天輪") || text.includes("購物廣場")) return "attract-eda-mall";
+      if (text.includes("天悅")) return "attract-eda-skylark";
+      if (text.includes("旗津") || text.includes("砲台") || text.includes("星空隧道")) return "attract-cijin";
+      if (text.includes("奇美")) return "attract-chimei-museum";
+      if (text.includes("名間")) return "attract-mingjian-park";
+      return null;
+    }
+
     // 渲染天數按鈕
     daySelector.innerHTML = TRIP_DATA.itinerary.map(item => `
       <button class="day-btn ${item.day === state.selectedDay ? "active" : ""}" data-day="${item.day}">
@@ -136,21 +174,36 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="meal-pill">🍱 午餐：${dayData.meals.lunch}</div>
             <div class="meal-pill">🍽️ 晚餐：${dayData.meals.dinner}</div>
           </div>
+          <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="quick-btn" style="background:#0284c7; color:#fff; border:none; padding:7px 14px; font-weight:700; border-radius:6px; cursor:pointer;" onclick="window.switchTabTo('attractions')">
+              🏖️ 查看景點與飯店圖文導覽 (全 11 處景點) ➔
+            </button>
+          </div>
         </div>
 
         <div class="timeline-flow">
-          ${dayData.timeline.map(item => `
-            <div class="timeline-item">
-              <div class="timeline-dot">●</div>
-              <div class="timeline-content">
-                <div class="timeline-header">
-                  <span class="timeline-name">${item.title}</span>
-                  <span class="timeline-time">${item.time}</span>
+          ${dayData.timeline.map(item => {
+            const aid = getAttractId(item.title + ' ' + item.desc);
+            return `
+              <div class="timeline-item">
+                <div class="timeline-dot">●</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-name">${item.title}</span>
+                    <span class="timeline-time">${item.time}</span>
+                  </div>
+                  <div class="timeline-desc">${item.desc}</div>
+                  ${aid ? `
+                    <div style="margin-top:8px;">
+                      <button type="button" class="quick-btn" style="border:1px solid #0284c7; color:#0284c7; background:rgba(2,132,199,0.06); padding:3px 10px; font-size:0.8rem; font-weight:700; border-radius:4px; cursor:pointer;" onclick="window.jumpToAttract('${aid}')">
+                        📍 點擊查看詳細圖文介紹與影片 ➔
+                      </button>
+                    </div>
+                  ` : ''}
                 </div>
-                <div class="timeline-desc">${item.desc}</div>
               </div>
-            </div>
-          `).join("")}
+            `;
+          }).join("")}
         </div>
       `;
     }
