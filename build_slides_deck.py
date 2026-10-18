@@ -793,6 +793,48 @@ html_template = """<!DOCTYPE html>
     </div>
   </section>
 
+  <!-- Slide: 景點解說 (墾丁福華渡假大飯店) -->
+  <section class="slide" id="slide-attract-howard">
+    <p class="s-eyebrow">ATTRACTIONS · Day 1 渡假住宿</p>
+    <h2 class="s-title">墾丁福華渡假大飯店（五星級濱海渡假勝地）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🏨 國境之南五星勝地 ＆ 專屬小灣海灘隧道</h4>
+          <div style="font-size:12px; line-height:1.55; color:var(--cf-text-dim); margin-bottom:8px;">
+            背依大尖山、前臨巴士海峽，坐擁小灣碧海藍天絕景。西班牙紅瓦白牆南歐渡假莊園風格，擁有近 400 間寬敞客房。<br>
+            • <strong>專屬小灣隧道</strong>：全台首創私密隧道，步行數分鐘直達小灣金黃沙灘。<br>
+            • <strong>豐富休閒設施</strong>：戶外泳池、健身房、大坪數休閒中心；鄰近熱鬧墾丁大街。<br>
+            • <strong>住宿提醒</strong>：依環保法規客房不提供一次性備品，請自備牙刷牙膏梳子；遵守晚點名與安寧規範。
+          </div>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=墾丁福華渡假大飯店" target="_blank" class="deck-res-chip map">🗺️ 墾丁福華導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/98" target="_blank" class="deck-res-chip web">墾丁福華官方網站</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=墾丁福華渡假大飯店+開箱" target="_blank" class="deck-res-chip video">海景客房開箱</a>
+              <a href="https://www.youtube.com/results?search_query=墾丁福華+麗香苑+早餐" target="_blank" class="deck-res-chip video">麗香苑百匯早餐</a>
+              <a href="https://www.youtube.com/results?search_query=墾丁福華+夜間+小灣" target="_blank" class="deck-res-chip video">夜間小灣導覽</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <img class="img-slide" style="height:140px;" src="assets/img/howard_1.jpg" alt="墾丁福華飯店外觀">
+            <img class="img-slide" style="height:140px;" src="assets/img/howard_2.jpg" alt="墾丁福華大廳休閒園區">
+          </div>
+          <img class="img-slide" style="margin-top:8px; height:125px; width:100%; object-fit:cover;" src="assets/img/howard_3.jpg" alt="墾丁福華渡假飯店遠景">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Slide 20: 景點解說 3 (義大遊樂世界 ＆ 摩天輪) -->
   <section class="slide" id="slide-attract3">
     <p class="s-eyebrow">ATTRACTIONS · Day 2 狂歡冒險 ＆ 時尚休閒</p>
@@ -835,7 +877,49 @@ html_template = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Slide 20: 景點解說 4 (旗津風景區 ＆ 奇美博物館) -->
+  <!-- Slide: 景點解說 (高雄義大天悅飯店) -->
+  <section class="slide" id="slide-attract-skylark">
+    <p class="s-eyebrow">ATTRACTIONS · Day 2 璀璨住宿</p>
+    <h2 class="s-title">高雄義大天悅飯店（義大核心英式新古典飯店）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🏰 英式新古典莊園 ＆ 漫步摩天輪商場</h4>
+          <div style="font-size:12px; line-height:1.55; color:var(--cf-text-dim); margin-bottom:8px;">
+            座落義大世界園區核心，外觀融合典雅氣派英式新古典風格，室內空間挑高宏偉、氛圍溫馨怡人。<br>
+            • <strong>直通璀璨摩天輪</strong>：景觀天橋直通海拔 215 米巨型摩天輪與 Outlet 購物中心，飽覽歐洲山城夜景。<br>
+            • <strong>百匯自助早餐</strong>：百種中西式豐盛晨喚百匯料理，補足一日充沛活力。<br>
+            • <strong>住宿提醒</strong>：全面不提供一次性盥洗用品，請自備備品；晚間請按時就寢查房，切勿奔跑喧嘩。
+          </div>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=高雄義大天悅飯店" target="_blank" class="deck-res-chip map">🗺️ 義大天悅導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.edaskylark.com.tw/" target="_blank" class="deck-res-chip web">義大天悅飯店官方網站</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=義大天悅飯店+開箱" target="_blank" class="deck-res-chip video">典雅客房開箱</a>
+              <a href="https://www.youtube.com/results?search_query=義大天悅飯店+摩天輪+夜景" target="_blank" class="deck-res-chip video">直通摩天輪夜景</a>
+              <a href="https://www.youtube.com/results?search_query=義大天悅飯店+早餐+百匯" target="_blank" class="deck-res-chip video">百匯晨喚自助餐</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <img class="img-slide" style="height:140px;" src="assets/img/skylark_1.jpg" alt="天悅飯店與摩天輪景觀">
+            <img class="img-slide" style="height:140px;" src="assets/img/skylark_2.jpg" alt="天悅飯店噴泉水景">
+          </div>
+          <img class="img-slide" style="margin-top:8px; height:125px; width:100%; object-fit:cover;" src="assets/img/skylark_3.jpg" alt="天悅飯店迎賓大廳門面夜景">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 21: 景點解說 4 (旗津風景區 ＆ 奇美博物館) -->
   <section class="slide" id="slide-attract4">
     <p class="s-eyebrow">ATTRACTIONS · Day 3 港都史蹟 ＆ 文藝瑰寶</p>
     <h2 class="s-title">旗津風景區 ＆ 奇美博物館</h2>

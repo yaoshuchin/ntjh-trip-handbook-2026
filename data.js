@@ -526,6 +526,39 @@ const TRIP_DATA = {
     ]
   },
   {
+    "id": "kenting-howard",
+    "name": "墾丁福華渡假大飯店",
+    "tag": "Day 1 渡假住宿",
+    "subtitle": "國境之南五星級濱海渡假勝地・眺望小灣絕美海景與大尖山",
+    "googleMapUrl": "https://maps.google.com/?q=墾丁福華渡假大飯店",
+    "desc": "墾丁福華渡假大飯店坐落於恆春半島南端，背依大尖山、前臨巴士海峽，坐擁小灣碧海藍天的絕佳景致。飯店採典雅的西班牙紅瓦白牆南歐渡假莊園風格建造，擁有近 400 間寬敞舒適客房。飯店內設有大坪數休閒中心、戶外標準游泳池、健身房，並建有全台首創的『私密專屬小灣隧道』，步行數分鐘即可直達小灣金黃沙灘與湛藍海濱。鄰近熱鬧的墾丁大街，步行即可感受南島夜市的歡樂熱情，是國境之南最具代表性的五星級渡假地標。\n\n【住宿特別叮嚀】：響應政府環保減塑政策，飯店客房全面不提供一次性備品（牙刷、牙膏、梳子、刮鬍刀等），請全體師生務必自備個人盥洗用具；夜間活動時請遵守飯店安寧秩序與晚點名規定。",
+    "images": [
+      "assets/img/howard_1.jpg",
+      "assets/img/howard_2.jpg",
+      "assets/img/howard_3.jpg"
+    ],
+    "webLinks": [
+      {
+        "title": "墾丁福華渡假大飯店官方網站",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/98"
+      }
+    ],
+    "videoLinks": [
+      {
+        "title": "【墾丁福華渡假大飯店開箱】五星級海景客房與專屬小灣海灘通道",
+        "url": "https://www.youtube.com/results?search_query=墾丁福華渡假大飯店+開箱"
+      },
+      {
+        "title": "【國境之南海島渡假】墾丁福華麗香苑自助百匯早餐與休閒設施",
+        "url": "https://www.youtube.com/results?search_query=墾丁福華+麗香苑+早餐"
+      },
+      {
+        "title": "【墾丁福華夜間漫遊】鄰近墾丁大街與小灣星空導覽",
+        "url": "https://www.youtube.com/results?search_query=墾丁福華+夜間+小灣"
+      }
+    ]
+  },
+  {
     "id": "eda-theme-park",
     "name": "義大遊樂世界",
     "tag": "Day 2 狂歡冒險",
@@ -588,6 +621,39 @@ const TRIP_DATA = {
       {
         "title": "【128種璀璨燈光秀】義大夜間縮時攝影景觀",
         "url": "https://www.youtube.com/results?search_query=義大摩天輪+燈光秀+縮時"
+      }
+    ]
+  },
+  {
+    "id": "eda-skylark",
+    "name": "高雄義大天悅飯店",
+    "tag": "Day 2 璀璨住宿",
+    "subtitle": "義大世界核心英式新古典飯店・漫步摩天輪與購物商場",
+    "googleMapUrl": "https://maps.google.com/?q=高雄義大天悅飯店",
+    "desc": "高雄義大天悅飯店座落於高雄大樹區義大世界園區核心，外觀融合典雅氣派的英式新古典建築風貌。飯店擁有各型寬敞舒適客房與百匯自助餐廳，室內空間挑高宏偉、氛圍溫馨怡人。天悅飯店地理位置得天獨厚，緊鄰直徑 80 公尺的海拔 215 公尺璀璨巨型摩天輪、義大世界購物廣場 Outlet 與義大遊樂世界，透過人行景觀天橋即可輕鬆漫步穿梭。夜晚窗外即可飽覽絢爛浪漫的摩天輪燈光秀與歐風山城夜景，讓畢旅第二晚洋溢著時尚休閒與浪漫回憶。\n\n【住宿特別叮嚀】：響應政府環保減塑政策，客房內不提供一次性盥洗用品（牙膏、牙刷、刮鬍刀等），敬請隨身自備；入夜後請依規定就寢查房，切勿喧嘩奔跑，維持良好作息以迎接第三天精彩行程。",
+    "images": [
+      "assets/img/skylark_1.jpg",
+      "assets/img/skylark_2.jpg",
+      "assets/img/skylark_3.jpg"
+    ],
+    "webLinks": [
+      {
+        "title": "高雄義大天悅飯店官方網站",
+        "url": "https://www.edaskylark.com.tw/"
+      }
+    ],
+    "videoLinks": [
+      {
+        "title": "【高雄義大天悅飯店開箱】英式新古典典雅客房與百匯晨喚早餐",
+        "url": "https://www.youtube.com/results?search_query=義大天悅飯店+開箱"
+      },
+      {
+        "title": "【義大世界渡假園區】天悅飯店直通義大Outlet摩天輪夜景",
+        "url": "https://www.youtube.com/results?search_query=義大天悅飯店+摩天輪+夜景"
+      },
+      {
+        "title": "【義大百匯自助餐廳】百種豐盛中西式料理活力晨喚直擊",
+        "url": "https://www.youtube.com/results?search_query=義大天悅飯店+早餐+百匯"
       }
     ]
   },
