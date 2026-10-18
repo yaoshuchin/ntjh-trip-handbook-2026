@@ -752,7 +752,48 @@ html_template = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Slide 19: 景點解說 3 (義大遊樂世界 ＆ 摩天輪) -->
+  <!-- Slide 19: 景點解說 (墾丁大街夜巡 ＆ 著名小吃 20 選) -->
+  <section class="slide" id="slide-attract-kenting">
+    <p class="s-eyebrow">ATTRACTIONS · Day 1 熱鬧夜巡</p>
+    <h2 class="s-title">墾丁大街夜巡（熱鬧夜市 ＆ 著名小吃 20 選）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🍢 墾丁大街不夜城 ＆ 著名小吃推薦</h4>
+          <div style="font-size:11.5px; line-height:1.5; color:var(--cf-text-dim); margin-bottom:8px;">
+            恆春半島最知名的觀光夜市與休閒核心。街道兩側林立特色攤商、異國酒吧與文創小舖，渡假氛圍濃厚。<br>
+            <strong>【必吃小吃 20 選精選】：</strong><br>
+            ① 勇伯脆皮大腸包小腸 ② 墾丁Q蛋奶 ③ 一品滷味（自製辣椒） ④ 吳師傅魯味（蛇辣醬） ⑤ 巷子內十碗麵 ⑥ 酥炸脆皮鮮奶 ⑦ 烤飛魚卵香腸 ⑧ 炙燒火焰骰子牛 ⑨ 炭烤大魷魚 ⑩ 泰式香蕉煎餅 ⑪ 墾丁酥炸豆乳雞 ⑫ 拔絲地瓜與芋頭 ⑬ 港口茶香冰淇淋 ⑭ 酥脆炸蛋蔥油餅 ⑮ 現打枋山芒果冰沙 ⑯ 焗烤生蠔海鮮 ⑰ 原住民石板烤肉 ⑱ 鹽酥大蝦 ⑲ 恆春古早味綠豆蒜 ⑳ 烤青蛙下蛋檸檬愛玉
+          </div>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=墾丁大街" target="_blank" class="deck-res-chip map">🗺️ 墾丁大街導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.ktnp.gov.tw/" target="_blank" class="deck-res-chip web">墾丁國家公園管理處官方網站</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=墾丁大街+美食攻略" target="_blank" class="deck-res-chip video">排隊小吃全攻略</a>
+              <a href="https://www.youtube.com/results?search_query=墾丁大街+夜市導覽" target="_blank" class="deck-res-chip video">夜巡街景開箱</a>
+              <a href="https://www.youtube.com/results?search_query=墾丁大街+必吃小吃" target="_blank" class="deck-res-chip video">傳統美味小吃</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <img class="img-slide" style="height:140px;" src="assets/img/kenting_street_1.jpg" alt="墾丁大街夜景">
+            <img class="img-slide" style="height:140px;" src="assets/img/kenting_street_2.jpg" alt="墾丁大街小吃">
+          </div>
+          <img class="img-slide" style="margin-top:8px; height:125px; width:100%; object-fit:cover;" src="assets/img/kenting_street_3.jpg" alt="墾丁大街熱鬧人潮">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 20: 景點解說 3 (義大遊樂世界 ＆ 摩天輪) -->
   <section class="slide" id="slide-attract3">
     <p class="s-eyebrow">ATTRACTIONS · Day 2 狂歡冒險 ＆ 時尚休閒</p>
     <h2 class="s-title">義大遊樂世界 ＆ 購物廣場摩天輪</h2>
@@ -854,7 +895,49 @@ html_template = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Slide 21: 學習單 是非題 -->
+  <!-- Slide 22: 景點解說 (名間親子生態園區) -->
+  <section class="slide" id="slide-attract-mingjian">
+    <p class="s-eyebrow">ATTRACTIONS · Day 3 生態樂園</p>
+    <h2 class="s-title">名間親子生態園區（2.6公頃全齡共融樂園）</h2>
+    <div class="s-body">
+      <div class="cols c2">
+        <div class="card-slide">
+          <h4>🌈 巨無霸彩虹滑梯 ＆ 全齡共融設施</h4>
+          <div style="font-size:12px; line-height:1.55; color:var(--cf-text-dim); margin-bottom:8px;">
+            占地達 2.6 公頃，為南投縣政府斥資近 6,000 萬元打造的旗艦級生態休閒公園。<br>
+            • <strong>5米巨無霸彩虹滑梯</strong>：雙道各 15 公尺超長磨石子滑道，搭配愛心草皮景觀。<br>
+            • <strong>全遮陽波浪防曬天幕</strong>：貼心波浪造型天幕，遊戲時防曬遮陽。<br>
+            • <strong>多元遊具與步道</strong>：環狀天空步道、攀爬網、共融鞦韆、沙坑區與生態水池，是返校前舒展合影首選。
+          </div>
+          <div class="deck-res-box">
+            <div class="deck-res-row">
+              <span class="deck-res-label">📍 地圖:</span>
+              <a href="https://maps.google.com/?q=名間親子生態園區" target="_blank" class="deck-res-chip map">🗺️ 名間親子生態園區導航</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://travel.nantou.gov.tw/spot/%E5%90%8D%E9%96%93%E8%A6%AA%E5%AD%90%E7%94%9F%E6%85%8B%E5%9C%92%E5%8D%80/" target="_blank" class="deck-res-chip web">南投旅遊網官方介紹</a>
+            </div>
+            <div class="deck-res-row">
+              <span class="deck-res-label">🎬 影片:</span>
+              <a href="https://www.youtube.com/results?search_query=名間親子生態園區+導覽" target="_blank" class="deck-res-chip video">園區完整導覽</a>
+              <a href="https://www.youtube.com/results?search_query=名間親子生態園區+彩虹溜滑梯" target="_blank" class="deck-res-chip video">彩虹滑梯體驗</a>
+              <a href="https://www.youtube.com/results?search_query=名間親子生態園區+遊具" target="_blank" class="deck-res-chip video">天空步道與遊具</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img class="img-slide" style="height:140px; width:100%; object-fit:cover;" src="assets/img/mingjian_1.jpg" alt="名間親子生態園區地標與彩虹溜滑梯">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+            <img class="img-slide" style="height:125px;" src="assets/img/mingjian_2.jpg" alt="園區步道花景">
+            <img class="img-slide" style="height:125px;" src="assets/img/mingjian_3.jpg" alt="生態水池景觀">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 23: 學習單 是非題 -->
   <section class="slide" id="slide-quiz1">
     <p class="s-eyebrow">QUIZ · 海生館學習單</p>
     <h2 class="s-title">海洋知識是非挑戰題（精選題解）</h2>
