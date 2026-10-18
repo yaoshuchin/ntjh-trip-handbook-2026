@@ -309,8 +309,8 @@ html_template = """<!DOCTYPE html>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 車</strong></td><td>904 全部</td><td>10</td><td>9</td><td><strong>19</strong></td><td>1</td><td>蔡O秀 導師（素、眷屬同房）</td></tr>
-          <tr><td><strong>2 車</strong></td><td>901 全部、902 男4 女7</td><td>15</td><td>15</td><td><strong>30</strong></td><td>0</td><td>董O遠 學務主任、吳O萱 導師、黃O英 導師</td></tr>
+          <tr><td><strong>1 車</strong></td><td>904 全部</td><td>10</td><td>9</td><td><strong>19</strong></td><td>1</td><td>董O遠 學務主任、蔡O秀 導師（素、眷屬同房）</td></tr>
+          <tr><td><strong>2 車</strong></td><td>901 全部、902 男4 女7</td><td>15</td><td>15</td><td><strong>30</strong></td><td>0</td><td>吳O萱 導師、黃O英 導師</td></tr>
           <tr><td><strong>3 車</strong></td><td>903 全部、902 男4 女4</td><td>15</td><td>16</td><td><strong>31</strong></td><td>0</td><td>陳O綸 導師</td></tr>
           <tr><td><strong>4 車 (丁車)</strong></td><td>905 全部</td><td>11</td><td>10</td><td><strong>21</strong></td><td>0</td><td>施O婷 導師</td></tr>
           <tr><td><strong>5 車</strong></td><td>906 全部</td><td>13</td><td>11</td><td><strong>24</strong></td><td>0</td><td>石O洋 導師</td></tr>
@@ -335,7 +335,7 @@ html_template = """<!DOCTYPE html>
             <thead><tr><th>職稱</th><th>姓名</th><th>10/21 福華</th><th>10/22 天悅</th><th>車次</th></tr></thead>
             <tbody>
               <tr><td>校長</td><td>劉O彥</td><td>－</td><td><strong>746</strong></td><td>公務</td></tr>
-              <tr><td>學務主任</td><td>董O遠</td><td><strong>4056</strong></td><td><strong>747</strong></td><td>2 車</td></tr>
+              <tr><td>學務主任</td><td>董O遠</td><td><strong>4056</strong></td><td><strong>747</strong></td><td>1 車</td></tr>
               <tr><td>902 導師</td><td>黃O英</td><td><strong>4058</strong></td><td><strong>748</strong></td><td>2 車</td></tr>
               <tr><td>908 導師</td><td>李O嘉</td><td><strong>4060</strong></td><td><strong>750</strong></td><td>6 車</td></tr>
               <tr><td>訓育組長</td><td>姚O勤</td><td><strong>3058</strong></td><td><strong>740</strong></td><td>7 車</td></tr>
@@ -662,10 +662,8 @@ html_template = """<!DOCTYPE html>
                 <a href="https://maps.google.com/?q=田寮月世界地質公園" target="_blank" class="deck-res-chip map">🗺️ Google Map 導航</a>
               </div>
               <div class="deck-res-row">
-                <span class="deck-res-label">🌐 網頁:</span>
-                <a href="https://khh.travel/zh-tw/attractions/detail/205" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
-                <a href="https://www.maolin-nsa.gov.tw/04000302.html" target="_blank" class="deck-res-chip web">茂林國家風景區</a>
-                <a href="https://okgo.tw/butyview.html?id=230" target="_blank" class="deck-res-chip web">玩全台灣步道</a>
+                <span class="deck-res-label">🌐 官網:</span>
+                <a href="https://khh.travel/zh-tw/attractions/detail/205" target="_blank" class="deck-res-chip web">高雄旅遊網官方介紹</a>
               </div>
               <div class="deck-res-row">
                 <span class="deck-res-label">🎬 影片:</span>
@@ -686,10 +684,8 @@ html_template = """<!DOCTYPE html>
                 <a href="https://maps.google.com/?q=恆春民謠館" target="_blank" class="deck-res-chip map">🗺️ 恆春民謠館</a>
               </div>
               <div class="deck-res-row">
-                <span class="deck-res-label">🌐 網頁:</span>
-                <a href="https://nrch.culture.tw/twpedia.aspx?id=10928" target="_blank" class="deck-res-chip web">文化部大百科</a>
-                <a href="https://www.cultural.pthg.gov.tw/" target="_blank" class="deck-res-chip web">屏東縣文化處</a>
-                <a href="https://music.ncfta.gov.tw/" target="_blank" class="deck-res-chip web">臺灣音樂館</a>
+                <span class="deck-res-label">🌐 官網:</span>
+                <a href="https://nrch.culture.tw/twpedia.aspx?id=10928" target="_blank" class="deck-res-chip web">文化部臺灣大百科</a>
               </div>
               <div class="deck-res-row">
                 <span class="deck-res-label">🎬 影片:</span>
@@ -727,10 +723,8 @@ html_template = """<!DOCTYPE html>
               <a href="https://maps.google.com/?q=國立海洋生物博物館" target="_blank" class="deck-res-chip map">🗺️ 海生館導航</a>
             </div>
             <div class="deck-res-row">
-              <span class="deck-res-label">🌐 網頁:</span>
-              <a href="https://www.nmmba.gov.tw/" target="_blank" class="deck-res-chip web">海生館官網</a>
-              <a href="https://www.dbnsa.gov.tw/Attractions-Content.aspx?lang=1&sno=04000188" target="_blank" class="deck-res-chip web">大鵬灣風景區</a>
-              <a href="https://i-pingtung.com/" target="_blank" class="deck-res-chip web">屏東旅遊網</a>
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.nmmba.gov.tw/" target="_blank" class="deck-res-chip web">國立海生館官方網站</a>
             </div>
             <div class="deck-res-row">
               <span class="deck-res-label">🎬 影片:</span>
@@ -751,10 +745,8 @@ html_template = """<!DOCTYPE html>
               <a href="https://maps.google.com/?q=貓鼻頭風景區" target="_blank" class="deck-res-chip map">🗺️ 貓鼻頭導航</a>
             </div>
             <div class="deck-res-row">
-              <span class="deck-res-label">🌐 網頁:</span>
-              <a href="https://www.ktnp.gov.tw/News_Content.aspx?n=855&s=2541" target="_blank" class="deck-res-chip web">墾管處導覽</a>
-              <a href="https://www.taiwan.net.tw/m1.aspx?sNo=0001121&id=2555" target="_blank" class="deck-res-chip web">交通部觀光署</a>
-              <a href="https://okgo.tw/butyview.html?id=250" target="_blank" class="deck-res-chip web">玩全台灣裙礁</a>
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.ktnp.gov.tw/News_Content.aspx?n=855&s=2541" target="_blank" class="deck-res-chip web">墾丁國家公園管理處導覽</a>
             </div>
             <div class="deck-res-row">
               <span class="deck-res-label">🎬 影片:</span>
@@ -793,10 +785,9 @@ html_template = """<!DOCTYPE html>
                 <a href="https://maps.google.com/?q=義大世界購物廣場" target="_blank" class="deck-res-chip map">🗺️ 義大購物廣場</a>
               </div>
               <div class="deck-res-row">
-                <span class="deck-res-label">🌐 網頁:</span>
-                <a href="http://www.edathemepark.com.tw/" target="_blank" class="deck-res-chip web">義大遊樂世界官網</a>
-                <a href="http://www.edamall.com.tw/" target="_blank" class="deck-res-chip web">義大購物官網</a>
-                <a href="https://khh.travel/zh-tw/attractions/detail/206" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
+                <span class="deck-res-label">🌐 官網:</span>
+                <a href="http://www.edathemepark.com.tw/" target="_blank" class="deck-res-chip web">義大遊樂世界官方網站</a>
+                <a href="http://www.edamall.com.tw/" target="_blank" class="deck-res-chip web">義大世界購物廣場官網</a>
               </div>
               <div class="deck-res-row">
                 <span class="deck-res-label">🎬 影片:</span>
@@ -834,10 +825,8 @@ html_template = """<!DOCTYPE html>
               <a href="https://maps.google.com/?q=旗津星空隧道" target="_blank" class="deck-res-chip map">🗺️ 旗津星空隧道</a>
             </div>
             <div class="deck-res-row">
-              <span class="deck-res-label">🌐 網頁:</span>
-              <a href="https://khh.travel/zh-tw/attractions/detail/207" target="_blank" class="deck-res-chip web">高雄旅遊網</a>
-              <a href="https://nchdb.boch.gov.tw/assets/overview/monument/19850819000004" target="_blank" class="deck-res-chip web">國定古蹟砲台</a>
-              <a href="https://www.chijin-temple.org.tw/" target="_blank" class="deck-res-chip web">天后宮簡介</a>
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://khh.travel/zh-tw/attractions/detail/207" target="_blank" class="deck-res-chip web">高雄旅遊網官方導覽</a>
             </div>
             <div class="deck-res-row">
               <span class="deck-res-label">🎬 影片:</span>
@@ -858,10 +847,8 @@ html_template = """<!DOCTYPE html>
               <a href="https://maps.google.com/?q=奇美博物館" target="_blank" class="deck-res-chip map">🗺️ 奇美博物館導航</a>
             </div>
             <div class="deck-res-row">
-              <span class="deck-res-label">🌐 網頁:</span>
-              <a href="https://www.chimeimuseum.org/" target="_blank" class="deck-res-chip web">奇美博物館官網</a>
-              <a href="https://www.twtainan.net/zh-tw/attractions/detail/761" target="_blank" class="deck-res-chip web">台南旅遊網</a>
-              <a href="https://www.taiwan.net.tw/m1.aspx?sNo=0001119&id=A12-00213" target="_blank" class="deck-res-chip web">交通部觀光署</a>
+              <span class="deck-res-label">🌐 官網:</span>
+              <a href="https://www.chimeimuseum.org/" target="_blank" class="deck-res-chip web">奇美博物館官方網站</a>
             </div>
             <div class="deck-res-row">
               <span class="deck-res-label">🎬 影片:</span>
@@ -900,10 +887,8 @@ html_template = """<!DOCTYPE html>
                 <a href="https://maps.google.com/?q=名間親子生態園區" target="_blank" class="deck-res-chip map">🗺️ 名間親子生態園區 Google Map</a>
               </div>
               <div class="deck-res-row">
-                <span class="deck-res-label">🌐 網頁:</span>
-                <a href="https://travel.nantou.gov.tw/spot/%E5%90%8D%E9%96%93%E8%A6%AA%E5%AD%90%E7%94%9F%E6%85%8B%E5%9C%92%E5%8D%80/" target="_blank" class="deck-res-chip web">南投旅遊網介紹</a>
-                <a href="https://www.nantou.gov.tw/" target="_blank" class="deck-res-chip web">南投縣政府最新消息</a>
-                <a href="https://okgo.tw/" target="_blank" class="deck-res-chip web">玩全台灣亮點設施</a>
+                <span class="deck-res-label">🌐 官網:</span>
+                <a href="https://travel.nantou.gov.tw/spot/%E5%90%8D%E9%96%93%E8%A6%AA%E5%AD%90%E7%94%9F%E6%85%8B%E5%9C%92%E5%8D%80/" target="_blank" class="deck-res-chip web">南投縣政府南投旅遊網介紹</a>
               </div>
               <div class="deck-res-row">
                 <span class="deck-res-label">🎬 影片:</span>
