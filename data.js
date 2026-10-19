@@ -916,6 +916,43 @@ const TRIP_DATA = {
   },
 
   notices: {
+    briefing: {
+      date: "10/20（二）",
+      speaker: "董O遠學務主任",
+      title: "10/20（二）董O遠主任 畢旅行前說明會重點宣導",
+      items: [
+        {
+          num: "一",
+          title: "違禁品查驗",
+          content: "<strong style=\"color:#dc2626;\">出發前再檢查一次</strong>！嚴禁攜帶<strong style=\"color:#dc2626;\">菸酒檳榔、刀械…</strong>等任何危險違禁品。"
+        },
+        {
+          num: "二",
+          title: "個人物品準備",
+          content: "<strong style=\"color:#dc2626;\">健保卡</strong>、個人醫藥必備，零用錢<strong style=\"color:#dc2626;\">限2000元以內</strong>；<strong style=\"color:#dc2626;\">體育服晚上穿</strong>；<strong style=\"color:#dc2626;\">不要帶任天堂 Switch 等電玩主機…</strong>。"
+        },
+        {
+          num: "三",
+          title: "服裝儀容規範",
+          content: "著合宜便服。女生<strong style=\"color:#dc2626;\">不要穿小可愛、熱褲、短裙！褲子至少一個拳頭高度</strong>；全程穿著<strong style=\"color:#dc2626;\">布鞋</strong>（拖鞋僅限沙灘踏浪活動使用）。"
+        },
+        {
+          num: "四",
+          title: "五星飯店公物愛護",
+          content: "飯店都是五星級飯店，<strong style=\"color:#dc2626;\">地毯很貴、偷抽菸引發灑水設施極為昂貴</strong>，嚴禁抽菸嬉鬧，違者照價賠償！"
+        },
+        {
+          num: "五",
+          title: "義大設施安全",
+          content: "<strong style=\"color:#dc2626;\">適合自己的遊戲去玩就好！</strong>有<strong style=\"color:#dc2626;\">心臟病或氣喘絕對不要玩刺激的遊戲！</strong>最恐怖的設施不要跟我搶…安全第一！"
+        },
+        {
+          num: "六",
+          title: "校規紀律與機動車處置",
+          content: "隨隊配置<strong style=\"color:#dc2626;\">機動車巡查</strong>！違犯校規之<strong style=\"color:#dc2626;\">打架、抽菸、喝酒、吃檳榔等（下車再檢查），一律即刻送回學校，家長帶回家管教！記大過！</strong>"
+        }
+      ]
+    },
     personal: [
       "【守時至上】『守時』是活動順利進行的不二法門，請準時抵達指定集合地點。各班班長確實掌握人數，上、下車清點人數後向隨隊人員、導師回報。",
       "【行車安全】上車前先上洗手間，會暈車的同學請開車前半小時服用暈車藥。同學必須全程繫安全帶，行車間嚴禁任意走動，頭手不可伸出車外。",

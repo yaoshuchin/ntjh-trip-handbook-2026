@@ -721,6 +721,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.innerHTML = `
       <div class="notice-accordion">
+        ${TRIP_DATA.notices.briefing ? `
+          <!-- 董主任行前說明會特別提醒 -->
+          <div class="notice-block" style="border:2px solid #ef4444; background:#fff5f5;">
+            <div class="notice-block-title" style="color:#b91c1c; border-bottom:2px solid #fecaca; display:flex; justify-content:space-between; align-items:center;">
+              <span>📢 ${TRIP_DATA.notices.briefing.title}</span>
+              <span style="font-size:0.75rem; background:#fee2e2; color:#b91c1c; padding:2px 8px; border-radius:4px;">學務處宣導</span>
+            </div>
+            <div style="padding:10px 14px;">
+              <ul class="notice-list" style="margin:0; padding-left:18px;">
+                ${TRIP_DATA.notices.briefing.items.map(it => `
+                  <li style="margin-bottom:8px; line-height:1.6;">
+                    <strong style="color:#b91c1c;">${it.num}、${it.title}：</strong>
+                    <span>${it.content}</span>
+                  </li>
+                `).join("")}
+              </ul>
+            </div>
+          </div>
+        ` : ''}
+
         <!-- 個人注意事項 -->
         <div class="notice-block">
           <div class="notice-block-title">📋 行程個人重要守則</div>
