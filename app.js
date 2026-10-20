@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuiz();
   initChecklist();
   initNotices();
+  initPhotoUploads();
   initQuickStats();
 
   /* ==========================================================================
@@ -290,35 +291,40 @@ document.addEventListener("DOMContentLoaded", () => {
       if (state.selectedClass !== "teachers") {
         list = list.concat(TRIP_DATA.students.map(s => ({
           type: "student",
-          name: s.name,
-          class: s.class,
-          gender: s.gender,
-          bus: s.bus,
-          room1: s.room1,
-          table1: s.table1,
-          room2: s.room2,
-          note: s.note
+          name: s.name || "",
+          class: s.class || "",
+          gender: s.gender || "",
+          bus: s.bus || "",
+          room1: s.room1 || s.roomDay1 || "－",
+          table1: s.table1 !== undefined ? s.table1 : "－",
+          room2: s.room2 || s.roomDay2 || "－",
+          note: s.note || ""
         })));
       }
 
-      // 加入老師
+      // 加入老師 (修復 roomDay1/roomDay2 欄位名稱對應與防呆)
       if (state.selectedClass === "all" || state.selectedClass === "teachers") {
         list = list.concat(TRIP_DATA.teachers.map(t => ({
           type: "teacher",
-          name: t.name,
-          class: t.role,
+          name: t.name || "",
+          class: t.role || "隨團師長",
           gender: "師長",
-          bus: t.bus,
-          room1: t.room1,
+          bus: t.bus || "隨團",
+          room1: t.roomDay1 || t.room1 || "－",
           table1: "隨師桌",
-          room2: t.room2,
-          note: t.note
+          room2: t.roomDay2 || t.room2 || "－",
+          note: t.note || ""
         })));
       }
 
-      // 班級過濾
+      // 班級過濾 (支援 901~909 與 301~309 雙向比對)
       if (state.selectedClass !== "all" && state.selectedClass !== "teachers") {
-        list = list.filter(item => item.class === state.selectedClass);
+        list = list.filter(item => {
+          if (item.class === state.selectedClass) return true;
+          if (state.selectedClass.startsWith("90") && item.class === state.selectedClass.replace(/^90/, "30")) return true;
+          if (state.selectedClass.startsWith("30") && item.class === state.selectedClass.replace(/^30/, "90")) return true;
+          return false;
+        });
       }
 
       // 車次過濾
@@ -327,16 +333,53 @@ document.addEventListener("DOMContentLoaded", () => {
         list = list.filter(item => item.bus === busNum);
       }
 
-      // 關鍵字搜尋 (姓名、房號、班級、桌次)
+      // 關鍵字搜尋 (姓名、房號、班級、桌次、車次、備註秒查)
       if (state.searchQuery) {
-        const q = state.searchQuery;
+        const q = state.searchQuery.trim().toLowerCase();
+
+        // 301~309 與 901~909 班級代碼互轉比對支援 (例如打 301 也能找到 901)
+        let qAlt = "";
+        const mClass3 = q.match(/^30([1-9])(班)?$/);
+        const mClass9 = q.match(/^90([1-9])(班)?$/);
+        if (mClass3) qAlt = "90" + mClass3[1];
+        else if (mClass9) qAlt = "30" + mClass9[1];
+
+        // 提取純數字以比對車次、桌次 (如使用者輸入 '第1車'、'1車'、'第2桌'、'2桌')
+        const pureNum = q.replace(/[第車桌班\s]/g, "");
+
         list = list.filter(item => {
-          return item.name.toLowerCase().includes(q) ||
-                 item.class.toLowerCase().includes(q) ||
-                 item.room1.toLowerCase().includes(q) ||
-                 item.room2.toLowerCase().includes(q) ||
-                 (item.table1 && item.table1.toString().includes(q)) ||
-                 (item.bus && item.bus.toString().includes(q));
+          const name = (item.name || "").toLowerCase();
+          const cls = (item.class || "").toLowerCase();
+          const room1 = (item.room1 || "").toLowerCase();
+          const room2 = (item.room2 || "").toLowerCase();
+          const table1 = (item.table1 !== undefined ? item.table1 : "").toString().toLowerCase();
+          const bus = (item.bus !== undefined ? item.bus : "").toString().toLowerCase();
+          const note = (item.note || "").toLowerCase();
+
+          // 1. 基本包含比對
+          const baseMatch = name.includes(q) ||
+                 cls.includes(q) ||
+                 (qAlt && (cls.includes(qAlt) || (cls + "班").includes(qAlt))) ||
+                 room1.includes(q) ||
+                 room2.includes(q) ||
+                 table1.includes(q) ||
+                 bus.includes(q) ||
+                 note.includes(q);
+
+          if (baseMatch) return true;
+
+          // 2. 使用者輸入包含 "車" (如 "1車"、"第1車")
+          if (q.includes("車") && pureNum && bus === pureNum) return true;
+
+          // 3. 使用者輸入包含 "桌" (如 "1桌"、"第1桌")
+          if (q.includes("桌") && pureNum && table1 === pureNum) return true;
+
+          // 4. 純數字 (1~2碼) 自動比對車次或桌次
+          if (pureNum && pureNum.length <= 2) {
+            if (bus === pureNum || table1 === pureNum) return true;
+          }
+
+          return false;
         });
       }
 
@@ -786,6 +829,38 @@ document.addEventListener("DOMContentLoaded", () => {
             `).join("")}
           </div>
         </div>
+      </div>
+    `;
+  }
+
+  /* ==========================================================================
+     9. 班級相片上傳區 (Padlet Photo Uploads)
+     ========================================================================== */
+  function initPhotoUploads() {
+    const container = document.getElementById("padlet-grid-container");
+    if (!container || !TRIP_DATA.photoUploads) return;
+
+    container.innerHTML = `
+      <div class="padlet-grid">
+        ${TRIP_DATA.photoUploads.map(item => `
+          <div class="padlet-card">
+            <div class="padlet-card-header">
+              <div class="padlet-class-badge">
+                <span>🎨</span>
+                <span>${item.className}</span>
+              </div>
+              <span class="padlet-bus-badge">${item.bus ? `${item.bus} 車` : ''}</span>
+            </div>
+            <div class="padlet-mentor">随班導師：${item.mentor || '導師'}</div>
+            <div class="padlet-card-desc">
+              點選下方按鈕直接進入 ${item.className} Padlet 雲端相簿。免下載 App，手機拍照或從相簿選取照片即可快速上傳，留下美好的國中回憶！
+            </div>
+            <a href="${item.padletUrl}" target="_blank" rel="noopener noreferrer" class="padlet-btn">
+              <span>📷 前往 ${item.className} 相簿上傳</span>
+              <span>↗</span>
+            </a>
+          </div>
+        `).join("")}
       </div>
     `;
   }

@@ -52,8 +52,8 @@
       <button class="nav-tab-btn" data-tab="buses">🚌 團務車次</button>
       <button class="nav-tab-btn" data-tab="attractions">🏖️ 景點導覽</button>
       <button class="nav-tab-btn" data-tab="quiz">🎯 海生館學習單</button>
-      <button class="nav-tab-btn" data-tab="checklist">🎒 行李清單</button>
-      <button class="nav-tab-btn" data-tab="notices">⚠️ 生活須知</button>
+      <button class="nav-tab-btn" data-tab="life">🎒 行李.生活</button>
+      <button class="nav-tab-btn" data-tab="photos">📸 班級相片上傳</button>
     </div>
   </nav>
 
@@ -185,8 +185,9 @@
       </div>
     </section>
 
-    <!-- 6. 行李清單分頁 -->
-    <section class="tab-pane" id="tab-checklist">
+    <!-- 6. 行李.生活分頁 (合併行李清單與生活安全須知) -->
+    <section class="tab-pane" id="tab-life">
+      <!-- 區塊一：行前行李打包清單 -->
       <div class="section-header">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
           <div>
@@ -214,16 +215,36 @@
       <div id="checklist-container">
         <!-- 由 JavaScript 生成 -->
       </div>
-    </section>
 
-    <!-- 7. 生活須知分頁 -->
-    <section class="tab-pane" id="tab-notices">
+      <hr class="life-section-divider">
+
+      <!-- 區塊二：生活安全須知 ＆ 應變指引 -->
       <div class="section-header">
         <h2 class="section-title">⚠️ 生活安全須知 ＆ 應變指引</h2>
         <p class="section-desc">行前叮嚀、住宿生活公約、防暈車穴位指壓與急救常識</p>
       </div>
       <div id="notices-content-container">
         <!-- 由 JavaScript 生成 -->
+      </div>
+    </section>
+
+    <!-- 7. 班級相片上傳分頁 -->
+    <section class="tab-pane" id="tab-photos">
+      <div class="section-header">
+        <h2 class="section-title">📸 畢旅時光 · 班級相片上傳區 (Padlet)</h2>
+        <p class="section-desc">請點選所屬班級連結，即刻上傳精采旅途照片與短片，共同記錄珍貴青春！免安裝 APP，瀏覽器即可拍照或選取照片上傳。</p>
+      </div>
+
+      <div class="padlet-intro-banner">
+        <div class="padlet-intro-icon">📲</div>
+        <div class="padlet-intro-text">
+          <h3>手機拍照直接上傳，免註冊免登入！</h3>
+          <p>點選下方對應班級的按鈕進入 Padlet 看板，點擊「＋」號即可即時拍照或從手機相簿選取照片上傳，歡迎記錄風景、合照與美食！</p>
+        </div>
+      </div>
+
+      <div id="padlet-grid-container">
+        <!-- 由 JavaScript 生成 301~309 班級卡片 -->
       </div>
     </section>
 
@@ -255,18 +276,18 @@
       <span>🎯</span>
       <span>學習單</span>
     </button>
-    <button class="mobile-nav-btn" data-tab="checklist">
+    <button class="mobile-nav-btn" data-tab="life">
       <span>🎒</span>
-      <span>清單</span>
+      <span>行李.生活</span>
     </button>
-    <button class="mobile-nav-btn" data-tab="notices">
-      <span>⚠️</span>
-      <span>須知</span>
+    <button class="mobile-nav-btn" data-tab="photos">
+      <span>📸</span>
+      <span>相片上傳</span>
     </button>
   </nav>
 
   <!-- 引用資料庫與互動腳本（帶快取刷新版本號） -->
-  <script src="data.js?v=202610182320"></script>
-  <script src="app.js?v=202610182320"></script>
+  <script src="data.js?v=202610202245"></script>
+  <script src="app.js?v=202610202245"></script>
 </body>
 </html>

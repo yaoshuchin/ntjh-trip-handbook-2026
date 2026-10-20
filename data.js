@@ -1057,6 +1057,20 @@ const TRIP_DATA = {
       ]
     }
   ]
+,
+
+  // 9. 班級相片上傳區 (Padlet 雲端相簿)
+  photoUploads: [
+    { classId: "301", className: "301 班", mentor: "吳O萱 導師", bus: 2, padletUrl: "https://padlet.com/qianyikeji1/301-s024ojlda9hk5xe7np2t" },
+    { classId: "302", className: "302 班", mentor: "黃O英 導師", bus: 2, padletUrl: "https://padlet.com/qianyikeji1/302-s024okmini4rgymbs9yw" },
+    { classId: "303", className: "303 班", mentor: "陳O綸 導師", bus: 3, padletUrl: "https://padlet.com/qianyikeji1/303-s024okmwsdwvjgadya4k" },
+    { classId: "304", className: "304 班", mentor: "蔡O秀 導師", bus: 1, padletUrl: "https://padlet.com/qianyikeji1/304-s024oknt94p6yo7etau4" },
+    { classId: "305", className: "305 班", mentor: "施O婷 導師", bus: 4, padletUrl: "https://padlet.com/qianyikeji1/305-s024oo9ogma3cyhep5cm" },
+    { classId: "306", className: "306 班", mentor: "石O洋 導師", bus: 5, padletUrl: "https://padlet.com/qianyikeji1/306-s024oo9zjhfilzg9gncp" },
+    { classId: "307", className: "307 班", mentor: "孫O惠 導師", bus: 6, padletUrl: "https://padlet.com/qianyikeji1/307-s024oo9oyvf8h7964ydm" },
+    { classId: "308", className: "308 班", mentor: "李O嘉 導師", bus: 6, padletUrl: "https://padlet.com/qianyikeji1/308-s024oo961fnycpk4lm5u" },
+    { classId: "309", className: "309 班", mentor: "黃O姿 導師", bus: 7, padletUrl: "https://padlet.com/qianyikeji1/309-s024oo9qzxaowa80fjlz" }
+  ]
 };
 
 if (typeof window !== 'undefined') {
