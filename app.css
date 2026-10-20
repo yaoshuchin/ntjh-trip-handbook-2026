@@ -1534,3 +1534,62 @@ body {
   box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
   transform: translateY(-1px);
 }
+
+
+/* ============================================================
+   頂部右上角二維碼 QR Code 樣式
+   ============================================================ */
+.hero-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.hero-text-block {
+  flex: 1;
+  min-width: 0;
+}
+.hero-qr-badge {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-qr-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.hero-qr-img {
+  width: 82px;
+  height: 82px;
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
+.hero-qr-text {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0369a1;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hero-qr-img {
+    width: 62px;
+    height: 62px;
+  }
+  .hero-qr-badge {
+    padding: 6px 8px;
+    border-radius: 10px;
+  }
+  .hero-qr-text {
+    font-size: 0.65rem;
+  }
+}

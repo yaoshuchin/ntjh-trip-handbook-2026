@@ -1682,3 +1682,66 @@ body.deck[data-theme="light-yellow"] .deck-select option {
 
 
 /* ============================================================
+
+
+/* ============================================================
+   封面投影片 QR Code 卡片
+   ============================================================ */
+.cover-content-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+.cover-text-block {
+  flex: 1;
+  min-width: 0;
+}
+.cover-qr-card {
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 3px solid var(--cf-accent);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cover-qr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.55);
+}
+.cover-qr-img {
+  width: 190px;
+  height: 190px;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.cover-qr-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+.cover-qr-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* 針對所有淡色系底色主題自適應優化 */
+body.deck[data-theme="light-green"] .cover-qr-card,
+body.deck[data-theme="light-red"] .cover-qr-card,
+body.deck[data-theme="light-purple"] .cover-qr-card,
+body.deck[data-theme="light-gray"] .cover-qr-card,
+body.deck[data-theme="light-blue"] .cover-qr-card,
+body.deck[data-theme="light-yellow"] .cover-qr-card {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+  border-color: var(--cf-accent);
+}
