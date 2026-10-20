@@ -149,11 +149,39 @@
   <span class="deck-id">南投國中 115 畢旅</span>
   <span class="deck-name">畢業旅行行動簡報手冊（去個資版）</span>
   <div class="deck-tools">
-    <a href="app.html" class="deck-btn" style="text-decoration:none; color:var(--cf-accent); border-color:rgba(56,189,248,0.4); margin-right:4px;">📱 手冊網頁版</a>
-    <button class="deck-btn" id="toc-btn" type="button">目錄總覽</button>
+    <a href="app.html" class="deck-btn" style="text-decoration:none; color:var(--cf-accent); border-color:rgba(56,189,248,0.4); margin-right:2px;">📱 手冊網頁版</a>
+
+    <!-- 簡報切換按鍵群組 -->
+    <div class="deck-nav-group">
+      <button class="deck-btn" id="ctrl-prev" type="button" title="上一頁 (快捷鍵: ← 或 PageUp)">◀ 上一頁</button>
+      <span class="deck-count" id="deck-count">01 / 30</span>
+      <button class="deck-btn" id="ctrl-next" type="button" title="下一頁 (快捷鍵: → 或 空白鍵)">下一頁 ▶</button>
+    </div>
+
+    <!-- 目錄總覽按鈕 -->
+    <button class="deck-btn" id="toc-btn" type="button" title="開啟目錄總覽">📋 目錄總覽</button>
+
+    <!-- 版面背景色彩選擇 -->
+    <div class="theme-select-wrap">
+      <span class="theme-label">🎨 底色:</span>
+      <select id="theme-select" class="deck-select">
+        <option value="default">🌙 預設深色</option>
+        <option value="light-green">🍃 淡綠色</option>
+        <option value="light-red">🌸 淡紅色</option>
+        <option value="light-purple">🪻 淡紫色</option>
+        <option value="light-gray">🌫️ 淺灰色</option>
+        <option value="light-blue">💧 淺藍色</option>
+        <option value="light-yellow">🌾 淡黃色</option>
+      </select>
+    </div>
+
+    <!-- 演示講解工具列切換 -->
+    <button class="deck-btn" id="draw-tool-toggle" type="button" title="開啟教鞭、畫筆、形狀與擷圖存檔">🖌️ 演示工具</button>
+
+    <!-- 閱讀/簡報模式 -->
     <button class="deck-btn is-on" id="mode-btn" type="button">閱讀模式</button>
+    <!-- 全螢幕 -->
     <button class="deck-btn" id="fs-btn" type="button">全螢幕</button>
-    <span class="deck-count" id="deck-count"></span>
   </div>
 </header>
 <main class="deck-stage" id="deck-stage">
@@ -1116,57 +1144,7 @@
     </div>
   </section>
 
-  <!-- Slide 24: 董O遠主任 畢旅行前說明會 -->
-  <section class="slide" id="slide-briefing">
-    <p class="s-eyebrow">PRE-DEPARTURE BRIEFING · 10/20 (二)</p>
-    <h2 class="s-title" style="color:#f87171;">📢 10/20（二）董O遠主任 畢旅行前說明會重點宣導</h2>
-    <div class="s-body">
-      <div class="cols c2">
-        <div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; margin-bottom: 10px; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">一、違禁品查驗</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              <span style="color:#f87171; font-weight:700;">出發前再檢查一次</span>！嚴禁攜帶<span style="color:#f87171; font-weight:700;">菸酒檳榔、刀械…</span>等任何危險違禁品。
-            </p>
-          </div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; margin-bottom: 10px; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">二、個人隨身物品</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              <span style="color:#f87171; font-weight:700;">健保卡</span>、個人醫藥必備，零用錢<span style="color:#f87171; font-weight:700;">限2000元以內</span>；<span style="color:#f87171; font-weight:700;">體育服晚上穿</span>；<span style="color:#f87171; font-weight:700;">不要帶任天堂 Switch 等電玩主機…</span>。
-            </p>
-          </div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">三、服裝儀容規範</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              著合宜便服。女生<span style="color:#f87171; font-weight:700;">不要穿小可愛、熱褲、短裙！褲子至少一個拳頭高度</span>；全程穿著<span style="color:#f87171; font-weight:700;">布鞋</span>（拖鞋僅限沙灘踏浪活動穿）。
-            </p>
-          </div>
-        </div>
-        <div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; margin-bottom: 10px; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">四、飯店高檔公物愛護</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              飯店都是五星級飯店，<span style="color:#f87171; font-weight:700;">地毯很貴、偷抽菸引發灑水設施極為昂貴</span>，嚴禁抽菸嬉鬧，違者照價賠償！
-            </p>
-          </div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; margin-bottom: 10px; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">五、義大遊樂世界安全</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              <span style="color:#f87171; font-weight:700;">適合自己的遊戲去玩就好！</span>有<span style="color:#f87171; font-weight:700;">心臟病或氣喘絕對不要玩刺激的遊戲！</span>最恐怖的不要跟我搶…安全第一！
-            </p>
-          </div>
-          <div class="card-slide" style="border-left: 4px solid #ef4444; background: rgba(239,68,68,0.08);">
-            <h4 style="color:#f87171; margin-bottom:4px;">六、校規紀律與機動車處置</h4>
-            <p style="font-size:13px; line-height:1.5; color:var(--cf-text);">
-              隨隊設有<span style="color:#f87171; font-weight:700;">機動車巡查</span>！違犯校規之<span style="color:#f87171; font-weight:700;">打架、抽菸、喝酒、吃檳榔等（下車再檢查），一律即刻送回學校，家長帶回家管教！記大過！</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Slide 25: 個人守則 -->
+  <!-- Slide 24: 個人守則 -->
   <section class="slide" id="slide-rules">
     <p class="s-eyebrow">SAFETY FIRST</p>
     <h2 class="s-title">行程個人重要安全守則</h2>
@@ -1292,8 +1270,66 @@
     </p>
   </section>
 
+  <!-- 兩側懸浮翻頁箭頭 -->
+  <button class="deck-side-nav left" id="side-prev" type="button" aria-label="上一頁" title="上一頁 (快捷鍵: ←)">‹</button>
+  <button class="deck-side-nav right" id="side-next" type="button" aria-label="下一頁" title="下一頁 (快捷鍵: →)">›</button>
+
 </main>
 
-<script src="lesson-deck.js?v=202610182325"></script>
+<!-- 目錄總覽彈窗浮層 -->
+<div id="deck-toc" class="deck-toc" hidden>
+  <div class="deck-toc-panel">
+    <div class="deck-toc-head">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span class="deck-toc-title">📋 畢業旅行簡報 目錄總覽</span>
+        <input type="text" id="toc-filter" class="toc-search-input" placeholder="🔍 搜尋投影片（如：海生館、車次、墾丁...）">
+      </div>
+      <button class="deck-btn" id="toc-close" type="button">關閉 ✕</button>
+    </div>
+    <div class="deck-toc-grid" id="deck-toc-grid"></div>
+  </div>
+</div>
+
+<!-- 懸浮演示工具列 (教鞭、手寫筆、形狀、顏色、擷圖存檔) -->
+<div class="deck-annotation-bar" id="annotation-bar" hidden>
+  <div class="anno-drag-handle" title="演示工具列">⋮⋮ 演示工具</div>
+  
+  <div class="anno-group">
+    <button class="anno-btn active" data-tool="pointer" type="button" title="一般游標 (關閉畫筆)">👆 游標</button>
+    <button class="anno-btn" data-tool="laser" type="button" title="講解教鞭 (雷射筆)">🔴 教鞭</button>
+    <button class="anno-btn" data-tool="pen" type="button" title="手寫筆 (自由塗鴉)">✏️ 手寫筆</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn" data-tool="shape-circle" type="button" title="畫圓形 / 橢圓">⭕ 圓形</button>
+    <button class="anno-btn" data-tool="shape-rect" type="button" title="畫正方形 / 矩形">⬛ 正方形</button>
+    <button class="anno-btn" data-tool="shape-triangle" type="button" title="畫三角形">🔺 三角形</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="color-btn active" data-color="#ef4444" style="--c:#ef4444;" type="button" title="紅色"></button>
+    <button class="color-btn" data-color="#2563eb" style="--c:#2563eb;" type="button" title="藍色"></button>
+    <button class="color-btn" data-color="#16a34a" style="--c:#16a34a;" type="button" title="綠色"></button>
+    <button class="color-btn" data-color="#111827" style="--c:#111827;" type="button" title="黑色"></button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn" id="pen-size-btn" type="button" title="切換線寬">線寬: 4px</button>
+    <button class="anno-btn" id="anno-undo" type="button" title="復原上一步">↩ 復原</button>
+    <button class="anno-btn danger" id="anno-clear" type="button" title="清除本頁所有手寫與圖形">🧹 清除</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn snap-btn" id="anno-capture" type="button" title="擷取當前投影片與筆記並存檔為 PNG 圖片">📸 擷圖存檔</button>
+  </div>
+
+  <button class="anno-close" id="anno-close" type="button" title="收起工具列">✕</button>
+</div>
+
+<!-- 教鞭雷射光點 -->
+<div id="deck-laser-pointer" class="deck-laser-pointer" hidden></div>
+
+<script src="assets/js/html2canvas.min.js"></script>
+<script src="lesson-deck.js?v=202610202210"></script>
 </body>
 </html>

@@ -1060,3 +1060,625 @@ body.deck.hub { padding-bottom: 0; }
     .hub-cards { grid-template-columns: 1fr; }
     .hub-main { padding: 30px 18px 60px; }
 }
+
+
+/* ============================================================
+   投中畢旅 簡報增強模組 (Themes, Navigation, Presentation Tools)
+   ============================================================ */
+
+/* ── 頂部色彩切換與導航群組 ── */
+.deck-nav-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--cf-rule);
+    border-radius: 999px;
+    padding: 2px 4px;
+}
+.deck-nav-group .deck-btn {
+    border: none;
+    padding: 0.32rem 0.65rem;
+    background: transparent;
+}
+.deck-nav-group .deck-btn:hover {
+    background: var(--cf-accent);
+    color: var(--cf-on-accent);
+}
+
+.theme-select-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--cf-rule);
+    border-radius: 999px;
+    padding: 3px 10px;
+}
+.theme-label {
+    font-size: 0.72rem;
+    font-family: var(--cf-sans);
+    color: var(--cf-text-dim);
+    white-space: nowrap;
+}
+.deck-select {
+    background: transparent;
+    border: none;
+    color: var(--cf-text);
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+.deck-select option {
+    background: #1A1A1C;
+    color: #F2EDE6;
+}
+
+/* ── 兩側懸浮翻頁箭頭 ── */
+.deck-side-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 72px;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 45;
+    transition: all 0.2s ease;
+    opacity: 0.3;
+    border-radius: 10px;
+    user-select: none;
+}
+.deck-side-nav.left { left: 10px; }
+.deck-side-nav.right { right: 10px; }
+.deck-side-nav:hover {
+    opacity: 1;
+    background: rgba(2, 132, 199, 0.85);
+    border-color: #38bdf8;
+    transform: translateY(-50%) scale(1.05);
+}
+body[data-mode="read"] .deck-side-nav { display: none; }
+
+/* ── 教鞭雷射光點 ── */
+.deck-laser-pointer {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff0055;
+    box-shadow: 0 0 8px #ff0055, 0 0 16px #ff0077, 0 0 24px #ff0099;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.12s ease;
+}
+.deck-laser-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 0, 85, 0.6);
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ── 投影片手寫塗鴉 Canvas ── */
+.slide-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 15;
+    border-radius: 20px;
+}
+body.is-drawing-mode .slide-canvas {
+    pointer-events: auto;
+    cursor: crosshair;
+}
+body.is-laser-mode {
+    cursor: none !important;
+}
+
+/* ── 懸浮演示工具列 ── */
+.deck-annotation-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 95;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(24, 24, 27, 0.94);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    user-select: none;
+    font-family: var(--cf-sans);
+    transition: all 0.25s ease;
+}
+.deck-annotation-bar[hidden] { display: none; }
+
+.anno-drag-handle {
+    font-size: 11px;
+    font-family: var(--cf-mono);
+    color: var(--cf-text-faint);
+    padding-right: 4px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: grab;
+}
+
+.anno-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 4px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+.anno-group:last-of-type { border-right: none; }
+
+.anno-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 9px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+.anno-btn:hover {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #ffffff;
+}
+.anno-btn.active {
+    background: #0284c7;
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+.anno-btn.snap-btn {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    border-color: #4ade80;
+    color: #ffffff;
+}
+.anno-btn.snap-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+.anno-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+    color: #f87171;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--c);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.color-btn:hover { transform: scale(1.2); }
+.color-btn.active {
+    transform: scale(1.3);
+    border-color: #ffffff;
+    box-shadow: 0 0 8px var(--c);
+}
+
+.anno-close {
+    background: transparent;
+    border: none;
+    color: var(--cf-text-faint);
+    font-size: 14px;
+    padding: 0 4px;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.anno-close:hover { color: #f87171; }
+
+/* ── 擷圖浮水印與提示 Toast ── */
+.deck-toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.95);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 120;
+    pointer-events: none;
+    animation: toastIn 0.25s ease forwards;
+}
+@keyframes toastIn {
+    from { opacity: 0; transform: translate(-50%, 15px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ── 目錄總覽搜尋框 ── */
+.toc-search-input {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--cf-rule);
+    color: var(--cf-text);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    outline: none;
+    width: 260px;
+    transition: all 0.2s ease;
+}
+.toc-search-input:focus {
+    border-color: var(--cf-accent);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   版面色彩方案：淡綠、淡紅、淡紫、淺灰、淺藍、淡黃
+   ============================================================ */
+
+/* 1. 淡綠 (Light Green) */
+body.deck[data-theme="light-green"] {
+    background: #edf7ee;
+    color: #143818;
+}
+body.deck[data-theme="light-green"] .deck-bar {
+    background: rgba(237, 247, 238, 0.95);
+    border-bottom-color: #c8e6c9;
+}
+body.deck[data-theme="light-green"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #f1f8f2 85%);
+    border-color: #a5d6a7;
+    box-shadow: 0 12px 36px rgba(27, 94, 32, 0.08);
+    color: #143818;
+}
+body.deck[data-theme="light-green"] .card-slide {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #c8e6c9;
+    color: #143818;
+}
+body.deck[data-theme="light-green"] .s-title,
+body.deck[data-theme="light-green"] .s-title-xl {
+    color: #1b5e20 !important;
+}
+body.deck[data-theme="light-green"] .s-eyebrow {
+    color: #2e7d32 !important;
+}
+body.deck[data-theme="light-green"] .deck-btn {
+    color: #1b5e20;
+    border-color: #a5d6a7;
+    background: #ffffff;
+}
+body.deck[data-theme="light-green"] .deck-btn.is-on {
+    background: #2e7d32;
+    border-color: #2e7d32;
+    color: #ffffff;
+}
+body.deck[data-theme="light-green"] .table-deck th {
+    background: #dcf2de;
+    color: #0f3d13;
+}
+body.deck[data-theme="light-green"] .table-deck td {
+    color: #143818;
+    border-color: #c8e6c9;
+}
+body.deck[data-theme="light-green"] .table-deck tr:nth-child(even) td {
+    background: #f4fbf5;
+}
+body.deck[data-theme="light-green"] .table-deck strong {
+    color: #0d3811;
+}
+body.deck[data-theme="light-green"] .deck-select option {
+    background: #ffffff;
+    color: #143818;
+}
+
+/* 2. 淡紅 (Light Red / Pink) */
+body.deck[data-theme="light-red"] {
+    background: #fff1f2;
+    color: #4c0519;
+}
+body.deck[data-theme="light-red"] .deck-bar {
+    background: rgba(255, 241, 242, 0.95);
+    border-bottom-color: #fecdd3;
+}
+body.deck[data-theme="light-red"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #fff5f6 85%);
+    border-color: #fda4af;
+    box-shadow: 0 12px 36px rgba(159, 18, 57, 0.08);
+    color: #4c0519;
+}
+body.deck[data-theme="light-red"] .card-slide {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #fecdd3;
+    color: #4c0519;
+}
+body.deck[data-theme="light-red"] .s-title,
+body.deck[data-theme="light-red"] .s-title-xl {
+    color: #9f1239 !important;
+}
+body.deck[data-theme="light-red"] .s-eyebrow {
+    color: #e11d48 !important;
+}
+body.deck[data-theme="light-red"] .deck-btn {
+    color: #9f1239;
+    border-color: #fda4af;
+    background: #ffffff;
+}
+body.deck[data-theme="light-red"] .deck-btn.is-on {
+    background: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+}
+body.deck[data-theme="light-red"] .table-deck th {
+    background: #ffe4e6;
+    color: #881337;
+}
+body.deck[data-theme="light-red"] .table-deck td {
+    color: #4c0519;
+    border-color: #fecdd3;
+}
+body.deck[data-theme="light-red"] .table-deck tr:nth-child(even) td {
+    background: #fff8f8;
+}
+body.deck[data-theme="light-red"] .table-deck strong {
+    color: #700c24;
+}
+body.deck[data-theme="light-red"] .deck-select option {
+    background: #ffffff;
+    color: #4c0519;
+}
+
+/* 3. 淡紫 (Light Purple) */
+body.deck[data-theme="light-purple"] {
+    background: #f5f3ff;
+    color: #2e1065;
+}
+body.deck[data-theme="light-purple"] .deck-bar {
+    background: rgba(245, 243, 255, 0.95);
+    border-bottom-color: #ddd6fe;
+}
+body.deck[data-theme="light-purple"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #f6f3ff 85%);
+    border-color: #c4b5fd;
+    box-shadow: 0 12px 36px rgba(107, 33, 168, 0.08);
+    color: #2e1065;
+}
+body.deck[data-theme="light-purple"] .card-slide {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #ddd6fe;
+    color: #2e1065;
+}
+body.deck[data-theme="light-purple"] .s-title,
+body.deck[data-theme="light-purple"] .s-title-xl {
+    color: #6b21a8 !important;
+}
+body.deck[data-theme="light-purple"] .s-eyebrow {
+    color: #7c3aed !important;
+}
+body.deck[data-theme="light-purple"] .deck-btn {
+    color: #6b21a8;
+    border-color: #c4b5fd;
+    background: #ffffff;
+}
+body.deck[data-theme="light-purple"] .deck-btn.is-on {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #ffffff;
+}
+body.deck[data-theme="light-purple"] .table-deck th {
+    background: #ede9fe;
+    color: #4c1d95;
+}
+body.deck[data-theme="light-purple"] .table-deck td {
+    color: #2e1065;
+    border-color: #ddd6fe;
+}
+body.deck[data-theme="light-purple"] .table-deck tr:nth-child(even) td {
+    background: #faf8ff;
+}
+body.deck[data-theme="light-purple"] .table-deck strong {
+    color: #3b0764;
+}
+body.deck[data-theme="light-purple"] .deck-select option {
+    background: #ffffff;
+    color: #2e1065;
+}
+
+/* 4. 淺灰 (Light Gray) */
+body.deck[data-theme="light-gray"] {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+body.deck[data-theme="light-gray"] .deck-bar {
+    background: rgba(241, 245, 249, 0.95);
+    border-bottom-color: #cbd5e1;
+}
+body.deck[data-theme="light-gray"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #f4f7fa 85%);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+    color: #0f172a;
+}
+body.deck[data-theme="light-gray"] .card-slide {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+body.deck[data-theme="light-gray"] .s-title,
+body.deck[data-theme="light-gray"] .s-title-xl {
+    color: #0f172a !important;
+}
+body.deck[data-theme="light-gray"] .s-eyebrow {
+    color: #0284c7 !important;
+}
+body.deck[data-theme="light-gray"] .deck-btn {
+    color: #0f172a;
+    border-color: #94a3b8;
+    background: #ffffff;
+}
+body.deck[data-theme="light-gray"] .deck-btn.is-on {
+    background: #0284c7;
+    border-color: #0284c7;
+    color: #ffffff;
+}
+body.deck[data-theme="light-gray"] .table-deck th {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+body.deck[data-theme="light-gray"] .table-deck td {
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+body.deck[data-theme="light-gray"] .table-deck tr:nth-child(even) td {
+    background: #f8fafc;
+}
+body.deck[data-theme="light-gray"] .table-deck strong {
+    color: #000000;
+}
+body.deck[data-theme="light-gray"] .deck-select option {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+/* 5. 淺藍 (Light Blue) */
+body.deck[data-theme="light-blue"] {
+    background: #f0f9ff;
+    color: #082f49;
+}
+body.deck[data-theme="light-blue"] .deck-bar {
+    background: rgba(240, 249, 255, 0.95);
+    border-bottom-color: #bae6fd;
+}
+body.deck[data-theme="light-blue"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #edf7fe 85%);
+    border-color: #7dd3fc;
+    box-shadow: 0 12px 36px rgba(3, 105, 161, 0.08);
+    color: #082f49;
+}
+body.deck[data-theme="light-blue"] .card-slide {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #bae6fd;
+    color: #082f49;
+}
+body.deck[data-theme="light-blue"] .s-title,
+body.deck[data-theme="light-blue"] .s-title-xl {
+    color: #0369a1 !important;
+}
+body.deck[data-theme="light-blue"] .s-eyebrow {
+    color: #0284c7 !important;
+}
+body.deck[data-theme="light-blue"] .deck-btn {
+    color: #0369a1;
+    border-color: #7dd3fc;
+    background: #ffffff;
+}
+body.deck[data-theme="light-blue"] .deck-btn.is-on {
+    background: #0284c7;
+    border-color: #0284c7;
+    color: #ffffff;
+}
+body.deck[data-theme="light-blue"] .table-deck th {
+    background: #e0f2fe;
+    color: #075985;
+}
+body.deck[data-theme="light-blue"] .table-deck td {
+    color: #082f49;
+    border-color: #bae6fd;
+}
+body.deck[data-theme="light-blue"] .table-deck tr:nth-child(even) td {
+    background: #f6fbfe;
+}
+body.deck[data-theme="light-blue"] .table-deck strong {
+    color: #034266;
+}
+body.deck[data-theme="light-blue"] .deck-select option {
+    background: #ffffff;
+    color: #082f49;
+}
+
+/* 6. 淡黃 (Light Yellow) */
+body.deck[data-theme="light-yellow"] {
+    background: #fefce8;
+    color: #422006;
+}
+body.deck[data-theme="light-yellow"] .deck-bar {
+    background: rgba(254, 252, 232, 0.95);
+    border-bottom-color: #fef08a;
+}
+body.deck[data-theme="light-yellow"] .slide {
+    background: linear-gradient(158deg, #ffffff 0%, #fefbe6 85%);
+    border-color: #fde047;
+    box-shadow: 0 12px 36px rgba(113, 63, 18, 0.08);
+    color: #422006;
+}
+body.deck[data-theme="light-yellow"] .card-slide {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #fef08a;
+    color: #422006;
+}
+body.deck[data-theme="light-yellow"] .s-title,
+body.deck[data-theme="light-yellow"] .s-title-xl {
+    color: #713f12 !important;
+}
+body.deck[data-theme="light-yellow"] .s-eyebrow {
+    color: #b45309 !important;
+}
+body.deck[data-theme="light-yellow"] .deck-btn {
+    color: #713f12;
+    border-color: #fde047;
+    background: #ffffff;
+}
+body.deck[data-theme="light-yellow"] .deck-btn.is-on {
+    background: #ca8a04;
+    border-color: #ca8a04;
+    color: #ffffff;
+}
+body.deck[data-theme="light-yellow"] .table-deck th {
+    background: #fef9c3;
+    color: #713f12;
+}
+body.deck[data-theme="light-yellow"] .table-deck td {
+    color: #422006;
+    border-color: #fef08a;
+}
+body.deck[data-theme="light-yellow"] .table-deck tr:nth-child(even) td {
+    background: #fffdf5;
+}
+body.deck[data-theme="light-yellow"] .table-deck strong {
+    color: #572905;
+}
+body.deck[data-theme="light-yellow"] .deck-select option {
+    background: #ffffff;
+    color: #422006;
+}
+
+
+/* ============================================================

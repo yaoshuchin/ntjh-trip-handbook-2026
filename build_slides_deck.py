@@ -151,11 +151,39 @@ html_template = """<!DOCTYPE html>
   <span class="deck-id">南投國中 115 畢旅</span>
   <span class="deck-name">畢業旅行行動簡報手冊（去個資版）</span>
   <div class="deck-tools">
-    <a href="app.html" class="deck-btn" style="text-decoration:none; color:var(--cf-accent); border-color:rgba(56,189,248,0.4); margin-right:4px;">📱 手冊網頁版</a>
-    <button class="deck-btn" id="toc-btn" type="button">目錄總覽</button>
+    <a href="app.html" class="deck-btn" style="text-decoration:none; color:var(--cf-accent); border-color:rgba(56,189,248,0.4); margin-right:2px;">📱 手冊網頁版</a>
+
+    <!-- 簡報切換按鍵群組 -->
+    <div class="deck-nav-group">
+      <button class="deck-btn" id="ctrl-prev" type="button" title="上一頁 (快捷鍵: ← 或 PageUp)">◀ 上一頁</button>
+      <span class="deck-count" id="deck-count">01 / 30</span>
+      <button class="deck-btn" id="ctrl-next" type="button" title="下一頁 (快捷鍵: → 或 空白鍵)">下一頁 ▶</button>
+    </div>
+
+    <!-- 目錄總覽按鈕 -->
+    <button class="deck-btn" id="toc-btn" type="button" title="開啟目錄總覽">📋 目錄總覽</button>
+
+    <!-- 版面背景色彩選擇 -->
+    <div class="theme-select-wrap">
+      <span class="theme-label">🎨 底色:</span>
+      <select id="theme-select" class="deck-select">
+        <option value="default">🌙 預設深色</option>
+        <option value="light-green">🍃 淡綠色</option>
+        <option value="light-red">🌸 淡紅色</option>
+        <option value="light-purple">🪻 淡紫色</option>
+        <option value="light-gray">🌫️ 淺灰色</option>
+        <option value="light-blue">💧 淺藍色</option>
+        <option value="light-yellow">🌾 淡黃色</option>
+      </select>
+    </div>
+
+    <!-- 演示講解工具列切換 -->
+    <button class="deck-btn" id="draw-tool-toggle" type="button" title="開啟教鞭、畫筆、形狀與擷圖存檔">🖌️ 演示工具</button>
+
+    <!-- 閱讀/簡報模式 -->
     <button class="deck-btn is-on" id="mode-btn" type="button">閱讀模式</button>
+    <!-- 全螢幕 -->
     <button class="deck-btn" id="fs-btn" type="button">全螢幕</button>
-    <span class="deck-count" id="deck-count"></span>
   </div>
 </header>
 <main class="deck-stage" id="deck-stage">
@@ -1244,9 +1272,67 @@ html_template = """<!DOCTYPE html>
     </p>
   </section>
 
+  <!-- 兩側懸浮翻頁箭頭 -->
+  <button class="deck-side-nav left" id="side-prev" type="button" aria-label="上一頁" title="上一頁 (快捷鍵: ←)">‹</button>
+  <button class="deck-side-nav right" id="side-next" type="button" aria-label="下一頁" title="下一頁 (快捷鍵: →)">›</button>
+
 </main>
 
-<script src="lesson-deck.js?v=202610182325"></script>
+<!-- 目錄總覽彈窗浮層 -->
+<div id="deck-toc" class="deck-toc" hidden>
+  <div class="deck-toc-panel">
+    <div class="deck-toc-head">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span class="deck-toc-title">📋 畢業旅行簡報 目錄總覽</span>
+        <input type="text" id="toc-filter" class="toc-search-input" placeholder="🔍 搜尋投影片（如：海生館、車次、墾丁...）">
+      </div>
+      <button class="deck-btn" id="toc-close" type="button">關閉 ✕</button>
+    </div>
+    <div class="deck-toc-grid" id="deck-toc-grid"></div>
+  </div>
+</div>
+
+<!-- 懸浮演示工具列 (教鞭、手寫筆、形狀、顏色、擷圖存檔) -->
+<div class="deck-annotation-bar" id="annotation-bar" hidden>
+  <div class="anno-drag-handle" title="演示工具列">⋮⋮ 演示工具</div>
+  
+  <div class="anno-group">
+    <button class="anno-btn active" data-tool="pointer" type="button" title="一般游標 (關閉畫筆)">👆 游標</button>
+    <button class="anno-btn" data-tool="laser" type="button" title="講解教鞭 (雷射筆)">🔴 教鞭</button>
+    <button class="anno-btn" data-tool="pen" type="button" title="手寫筆 (自由塗鴉)">✏️ 手寫筆</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn" data-tool="shape-circle" type="button" title="畫圓形 / 橢圓">⭕ 圓形</button>
+    <button class="anno-btn" data-tool="shape-rect" type="button" title="畫正方形 / 矩形">⬛ 正方形</button>
+    <button class="anno-btn" data-tool="shape-triangle" type="button" title="畫三角形">🔺 三角形</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="color-btn active" data-color="#ef4444" style="--c:#ef4444;" type="button" title="紅色"></button>
+    <button class="color-btn" data-color="#2563eb" style="--c:#2563eb;" type="button" title="藍色"></button>
+    <button class="color-btn" data-color="#16a34a" style="--c:#16a34a;" type="button" title="綠色"></button>
+    <button class="color-btn" data-color="#111827" style="--c:#111827;" type="button" title="黑色"></button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn" id="pen-size-btn" type="button" title="切換線寬">線寬: 4px</button>
+    <button class="anno-btn" id="anno-undo" type="button" title="復原上一步">↩ 復原</button>
+    <button class="anno-btn danger" id="anno-clear" type="button" title="清除本頁所有手寫與圖形">🧹 清除</button>
+  </div>
+
+  <div class="anno-group">
+    <button class="anno-btn snap-btn" id="anno-capture" type="button" title="擷取當前投影片與筆記並存檔為 PNG 圖片">📸 擷圖存檔</button>
+  </div>
+
+  <button class="anno-close" id="anno-close" type="button" title="收起工具列">✕</button>
+</div>
+
+<!-- 教鞭雷射光點 -->
+<div id="deck-laser-pointer" class="deck-laser-pointer" hidden></div>
+
+<script src="assets/js/html2canvas.min.js"></script>
+<script src="lesson-deck.js?v=202610202210"></script>
 </body>
 </html>
 """
